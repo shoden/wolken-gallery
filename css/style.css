@@ -1,0 +1,32 @@
+body, html {
+  background: #DEDEDE;
+  text-align: center;
+}
+
+img.pic {
+  float: left;
+  padding: 2px;
+  background: #AAA;
+  border: 0px;
+}
+
+img.pic:hover {
+  background: #000098;
+}
+
+.thumb {
+  float: left;
+  padding: 3px;
+  background: #EEEEEE;
+  border: solid #666 1px;
+  margin: 10px;
+  text-align: left;
+  font-family: "Verdana";
+  font-size: 10px;
+}
+
+.thumbtitle {
+  color: #000098;
+  font-weight: bold;
+  font-style:italic;
+}
