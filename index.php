@@ -102,6 +102,7 @@ echo "<a class=\"takelink\" href=\"#{$h}{$m}\">{$h}:{$m}</a>&nbsp;\n";
 </div>
 
 <div class="take">
+<a name="0700" id="0700"></a>
 <div class="taketitle">Hora: 07:00</div>
 <?php
 sort($file_list);
@@ -123,7 +124,52 @@ foreach($file_list as $file) {
 </div>
 
 <div class="take">
-<div class="taketitle">Hora: 07:00</div>
+<a name="0710" id="0710"></a>
+<div class="taketitle">Hora: 07:10</div>
+<?php
+sort($file_list);
+foreach($file_list as $file) {
+  $path = 'img/thumbs/'.$file;
+  $title = "<center><p class=\"thumbtitle\">{$file}</p></center>";
+  $title .= "Par&aacute;metro 1: 23<br>";
+  $title .= "Par&aacute;metro 2: 145<br>";
+  $title .= "Par&aacute;metro 3: 200<br>";
+  $title .= "Par&aacute;metro 4: 7<br>";
+  if(!is_file('img/' . $file)) continue;
+  echo "<div class=\"thumb\">";
+  echo "<a rel=\"lightbox[a]\" href=\"img/{$file}\" title=\"{$file}\">";
+  echo "<img src=\"{$path}\" class=\"pic\" alt=\"img/{$file}\"></a><br>\n";
+  echo $title;
+  echo "</div>";
+}
+?>
+</div>
+
+<div class="take">
+<a name="0720" id="0720"></a>
+<div class="taketitle">Hora: 07:20</div>
+<?php
+sort($file_list);
+foreach($file_list as $file) {
+  $path = 'img/thumbs/'.$file;
+  $title = "<center><p class=\"thumbtitle\">{$file}</p></center>";
+  $title .= "Par&aacute;metro 1: 23<br>";
+  $title .= "Par&aacute;metro 2: 145<br>";
+  $title .= "Par&aacute;metro 3: 200<br>";
+  $title .= "Par&aacute;metro 4: 7<br>";
+  if(!is_file('img/' . $file)) continue;
+  echo "<div class=\"thumb\">";
+  echo "<a rel=\"lightbox[a]\" href=\"img/{$file}\" title=\"{$file}\">";
+  echo "<img src=\"{$path}\" class=\"pic\" alt=\"img/{$file}\"></a><br>\n";
+  echo $title;
+  echo "</div>";
+}
+?>
+</div>
+
+<div class="take">
+<a name="0730" id="0730"></a>
+<div class="taketitle">Hora: 07:30</div>
 <?php
 sort($file_list);
 foreach($file_list as $file) {
