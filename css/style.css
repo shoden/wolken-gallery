@@ -25,7 +25,11 @@ body, html {
 #headertxt {
   float: left;
   padding: 5px;
+  padding-left: 10px;
   background: #FEFEFE;
+  background-image: url('../images/currentdate-leftbg.jpg');
+  background-position: top left;
+  background-repeat: no-repeat;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 0px;
@@ -33,12 +37,16 @@ body, html {
 
 #currentdate{
   background: #FEFEFE;
+  background-image: url('../images/currentdate-rightbg.jpg');
+  background-position: top right;
+  background-repeat: no-repeat;
   font-weight: bold;
   color: #000098;
   float: left;
   margin: 10px;
   margin-left: 0px;
   padding: 5px;
+  padding-right: 10px;
 }
 
 #calendar {
@@ -74,7 +82,7 @@ body, html {
   margin-right: 0px;
   float: left;
   text-align: left;
-  background: #FEFEFE;
+  background: #b6d1ee;
   line-height: 30px;
 }
 

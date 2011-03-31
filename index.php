@@ -103,7 +103,7 @@ echo "<a class=\"takelink\" href=\"#{$h}{$m}\">{$h}:{$m}</a>&nbsp;\n";
 
 <div class="take">
 <a name="0700" id="0700"></a>
-<div class="taketitle">Hora: 07:00</div>
+<div class="taketitle">07:00</div>
 <?php
 sort($file_list);
 foreach($file_list as $file) {
@@ -125,7 +125,7 @@ foreach($file_list as $file) {
 
 <div class="take">
 <a name="0710" id="0710"></a>
-<div class="taketitle">Hora: 07:10</div>
+<div class="taketitle">07:10</div>
 <?php
 sort($file_list);
 foreach($file_list as $file) {
@@ -147,7 +147,7 @@ foreach($file_list as $file) {
 
 <div class="take">
 <a name="0720" id="0720"></a>
-<div class="taketitle">Hora: 07:20</div>
+<div class="taketitle">07:20</div>
 <?php
 sort($file_list);
 foreach($file_list as $file) {
@@ -169,7 +169,7 @@ foreach($file_list as $file) {
 
 <div class="take">
 <a name="0730" id="0730"></a>
-<div class="taketitle">Hora: 07:30</div>
+<div class="taketitle">07:30</div>
 <?php
 sort($file_list);
 foreach($file_list as $file) {
