@@ -5,6 +5,32 @@ body, html {
   font-size: 14px;
 }
 
+#logo {
+  border: 0px;
+  width: 100%;
+  height: 64px;
+  padding: 0px;
+  margin: 0px;
+  background: #FFFFFF;
+  background-image: url('../images/header.jpg');
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+#logo td#left {
+  padding: 0px;
+  vertical-align: top;
+  text-align: left;
+  padding: 0px;
+}
+
+#logo td#right {
+  padding: 0px;
+  vertical-align: top;
+  text-align: center;
+  padding: 0px;
+}
+
 #header {
   width: 100%;
   float: left;

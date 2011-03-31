@@ -30,6 +30,7 @@ $total = count($file_list);
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <link rel="stylesheet" type="text/css" href="css/jsDatePick_ltr.css" media="all" />
   <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
   <script type="text/javascript">
   $(function() {
       $('.take a').lightBox();
@@ -70,7 +71,7 @@ $total = count($file_list);
 		});
 	};
 </script>
-
+<div id="logo"></div>
 <div id="header">
   <table>
     <tr>
