@@ -1,11 +1,84 @@
 body, html {
-  background: #DEDEDE;
+  background: #466fad;
   text-align: center;
+  font-family: "Verdana";
+  font-size: 14px;
+}
+
+#header {
+  width: 100%;
+  float: left;
+  background: #8da8c6;
+  margin-bottom: 10px;
+}
+
+#headertxt {
+  float: left;
+  padding: 5px;
+  background: #FEFEFE;
+  margin: 10px;
+  margin-right: 0px;
+}
+
+#currentdate{
+  background: #FEFEFE;
+  float: left;
+  margin: 10px;
+  margin-left: 0px;
+  padding: 5px;
+}
+
+#calendar {
+  float: left;
+  margin:10px;
+  border: solid 1px #AAA;
+  background: #FFF;
+  width:205px;
+  height:230px;
+}
+
+#headerdate {
+  background: #0FF;
+  float: left;
+  width: 50%;
+}
+
+#date {
+  float: left;
+  display: block;
+  position: relative;
+  height:20px;
+  line-height:20px;
+  margin:10px 0 0 0;
+  border:dashed 1px #666;
+  position: relative;
+}
+
+#takelist {
+  margin-bottom: 15px;
+  float: left;
+  text-align: left;
+  background: #FEFEFE;
+}
+
+.taketitle {
+  padding: 2px;
+  margin-bottom: 15px;
+  background: url('../images/taketitle-bg.jpg');
+  font-weight: bold;
+  font-size: 16px;
+  height: 20px;
+}
+
+.take {
+  margin-bottom: 15px;
+  background: #8da8c6;
+  float: left;
 }
 
 img.pic {
   float: left;
-  padding: 2px;
+  padding: 1px;
   background: #AAA;
   border: 0px;
 }
@@ -16,10 +89,10 @@ img.pic:hover {
 
 .thumb {
   float: left;
-  padding: 3px;
-  background: #EEEEEE;
-  border: solid #666 1px;
-  margin: 10px;
+  padding: 5px;
+  color: #222;
+  background: #638ac3;
+  margin: 5px;
   text-align: left;
   font-family: "Verdana";
   font-size: 10px;
@@ -28,5 +101,5 @@ img.pic:hover {
 .thumbtitle {
   color: #000098;
   font-weight: bold;
-  font-style:italic;
 }
+
