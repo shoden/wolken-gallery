@@ -16,29 +16,27 @@ if ($handle = opendir('img/thumbs')) {
 $count = 0;
 $total = count($file_list);
 ?>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-es" lang="es-es" dir="ltr">
 <head>
-<title>Galler&iacute;a</title>
-<style type="text/css">
-</style>
-
-<script type="text/javascript" src="js/jquery.1.4.2.js"></script>
-<script type="text/javascript" src="js/jsDatePick.jquery.min.1.3.js"></script>
-
-<link rel="stylesheet" href="css/style.css" type="text/css" />
-<link rel="stylesheet" type="text/css" media="all" href="css/jsDatePick_ltr.css" />
-
-    <script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
-    <!-- / fim dos arquivos utilizados pelo jQuery lightBox plugin -->
-    
-    <!-- Ativando o jQuery lightBox plugin -->
-    <script type="text/javascript">
-    $(function() {
-        $('.take a').lightBox();
-    });
-    </script>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <title>Galler&iacute;a</title>
+  <script type="text/javascript" src="js/jquery.1.4.2.js"></script>
+  <script type="text/javascript" src="js/jsDatePick.jquery.min.1.3.js"></script>
+  <script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <link rel="stylesheet" type="text/css" href="css/jsDatePick_ltr.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+  <script type="text/javascript">
+  $(function() {
+      $('.take a').lightBox();
+  });
+  </script>
 </head>
+<body>
 <script type="text/javascript">
 	window.onload = function(){		
 		
@@ -59,33 +57,39 @@ $total = count($file_list);
 			imgPath:"img/",
 			weekStartDay:1*/
 		});
+
+    //alert( g_globalObject.toSource() );
+    
+    document.getElementById("currentdate").innerHTML = g_globalObject.currentDay 
+      + "/" + g_globalObject.currentMonth
+      + "/" + g_globalObject.currentYear;
 		
 		g_globalObject.setOnSelectedDelegate(function(){
 			var obj = g_globalObject.getSelectedDay();
-			//alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);
 			document.getElementById("currentdate").innerHTML = obj.day + "/" + obj.month + "/" + obj.year;
 		});
-		
 	};
 </script>
-<body>
 
 <div id="header">
-  <div id="calendar"></div>
-
-  <div id="headerdate">k
-    <div id="headertxt">Fecha actual:</div>
-    <div id="currentdate"></div>
-  </div>
-
-  <div id="takelist">tomas:
-  <a href="#">7:00</a>&nbsp;
-  <a href="#">7:00</a>&nbsp;
-  <a href="#">7:00</a>&nbsp;
-  <a href="#">7:00</a>&nbsp;
-  <a href="#">7:00</a>&nbsp;
-  <a href="#">7:00</a>&nbsp;
-  </div>
+  <table>
+    <tr>
+      <td class="headercol1"><div id="calendar"></div></td>
+      <td class="headercol2">
+          <div id="headertxt">Fecha actual:</div>
+          <div id="currentdate">&nbsp;</div>
+          <br><br>
+          <div id="takelist">Tomas:
+            <a href="#">7:00</a>&nbsp;
+            <a href="#">7:00</a>&nbsp;
+            <a href="#">7:00</a>&nbsp;
+            <a href="#">7:00</a>&nbsp;
+            <a href="#">7:00</a>&nbsp;
+            <a href="#">7:00</a>&nbsp;
+          </div>
+      </td>
+    </tr>
+  </table>
 </div>
 
 <div class="take">

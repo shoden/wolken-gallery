@@ -12,11 +12,21 @@ body, html {
   margin-bottom: 10px;
 }
 
+.headercol1 {
+  width:220px;
+}
+
+.headercol2 {
+  vertical-align: top;
+  width: 100%;
+}
+
 #headertxt {
   float: left;
   padding: 5px;
   background: #FEFEFE;
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   margin-right: 0px;
 }
 
@@ -96,6 +106,7 @@ img.pic:hover {
   text-align: left;
   font-family: "Verdana";
   font-size: 10px;
+  width: 130px;
 }
 
 .thumbtitle {
