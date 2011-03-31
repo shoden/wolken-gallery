@@ -5,6 +5,32 @@ body, html {
   font-size: 14px;
 }
 
+.webcam {
+  float: right;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #FEFEFE;
+  background-image: url('../images/currentdate-leftbg.jpg'),  url('../images/currentdate-rightbg.jpg');
+  background-position: top left, top right;
+  background-repeat: no-repeat;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.webcam a {
+  color: #466fad;
+  text-decoration: none;
+}
+
+.webcam a:hover {
+  color: #000098;
+  text-decoration: none;
+}
+
 #logo {
   border: 0px;
   width: 100%;
@@ -12,8 +38,8 @@ body, html {
   padding: 0px;
   margin: 0px;
   background: #FFFFFF;
-  background-image: url('../images/header.jpg');
-  background-position: top left;
+  background-image: url('../images/header.jpg'),  url('../images/header-rightbg.jpg');
+  background-position: top left, top right;
   background-repeat: no-repeat;
 }
 

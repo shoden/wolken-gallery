@@ -79,6 +79,8 @@ $total = count($file_list);
       <td class="headercol2">
           <div id="headertxt">Fecha actual:</div>
           <div id="currentdate">&nbsp;</div>
+          <div class="webcam"><a href="#">Webcam 2</a></div>
+          <div class="webcam"><a href="#">Webcam 1</a></div>
           <br><br><br>
           <div id="takelist">
 <?php
