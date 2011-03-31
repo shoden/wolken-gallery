@@ -78,14 +78,23 @@ $total = count($file_list);
       <td class="headercol2">
           <div id="headertxt">Fecha actual:</div>
           <div id="currentdate">&nbsp;</div>
-          <br><br>
-          <div id="takelist">Tomas:
-            <a href="#">7:00</a>&nbsp;
-            <a href="#">7:00</a>&nbsp;
-            <a href="#">7:00</a>&nbsp;
-            <a href="#">7:00</a>&nbsp;
-            <a href="#">7:00</a>&nbsp;
-            <a href="#">7:00</a>&nbsp;
+          <br><br><br>
+          <div id="takelist">
+<?php
+
+for($h=7; $h<22; $h++)
+  for($m=0; $m<60; $m+=10){
+    $h = str_pad($h, 2, "0", STR_PAD_LEFT); 
+    $m = str_pad($m, 2, "0", STR_PAD_LEFT); 
+    echo "<a class =\"takelink\" href=\"#{$h}{$m}\">{$h}:{$m}</a>&nbsp;\n";
+  }
+
+$h=22; $m=0;
+$h = str_pad($h, 2, "0", STR_PAD_LEFT); 
+$m = str_pad($m, 2, "0", STR_PAD_LEFT); 
+echo "<a class=\"takelink\" href=\"#{$h}{$m}\">{$h}:{$m}</a>&nbsp;\n";
+
+?>
           </div>
       </td>
     </tr>

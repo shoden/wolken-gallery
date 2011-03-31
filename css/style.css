@@ -13,6 +13,7 @@ body, html {
 }
 
 .headercol1 {
+  vertical-align: top;
   width:220px;
 }
 
@@ -32,6 +33,8 @@ body, html {
 
 #currentdate{
   background: #FEFEFE;
+  font-weight: bold;
+  color: #000098;
   float: left;
   margin: 10px;
   margin-left: 0px;
@@ -65,10 +68,14 @@ body, html {
 }
 
 #takelist {
-  margin-bottom: 15px;
+  padding: 8px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
   float: left;
   text-align: left;
   background: #FEFEFE;
+  line-height: 30px;
 }
 
 .taketitle {
@@ -78,6 +85,23 @@ body, html {
   font-weight: bold;
   font-size: 16px;
   height: 20px;
+}
+
+.takelink {
+  text-decoration: none;
+  color: #000000;
+  font-size: 14px;
+  padding: 2px;
+  margin: 1px;
+  background: url('../images/taketitle-bg.jpg');
+  height: 20px;
+  border: solid 1px #666;
+}
+
+.takelink:hover {
+  background: url('../images/taketitle-bg2.jpg');
+  color: #000098;
+  border: solid 1px #000098;
 }
 
 .take {
