@@ -43,21 +43,21 @@ if(isset($_POST['submit'])) {
   <td class="paramstableheader">Toma</td>
 <?php
   for($p=1; $p<=10; $p++){
-    echo "<td class=\"paramstableheader\">Parametro {$p}</td>";
+    echo "<td class=\"paramstableheader\">Parametro {$p}</td>\n";
   }
 ?>
 </tr>
 <tr>
 <?php
   for($i=1; $i<=10; $i++){
-    echo "<tr>";
-    echo "<td class=\"takeid\">{$i}</td>";
+    echo "<tr>\n";
+    echo "<td class=\"takeid\">{$i}</td>\n";
 
     for($j=1; $j<=10; $j++){
-    echo "<td><input class=\"param\" name=\"\" type\"text\" value=\"{$j}\"/></td>";
+    echo "<td><input class=\"param\" name=\"{$i}-{$j}\" type=\"text\" value=\"{$j}\"/></td>\n";
     }
 
-    echo "</tr>";
+    echo "</tr>\n";
 
   }
 
