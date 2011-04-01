@@ -246,10 +246,10 @@ function pml_login($todo = "",$action = "") {
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-es" lang="es-es" dir="ltr">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="noindex" />
   <meta name="keywords" content="" />
   <meta name="description" content="" />
-  <title>Galler&iacute;a</title>
+  <title>Administraci&oacute;n</title>
   <link rel="stylesheet" type="text/css" href="../css/style.css"/>
   <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
