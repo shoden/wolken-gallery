@@ -30,7 +30,7 @@ ERROR_REPORTING(E_ALL);
 function pml_checklogin($goto,$status = "0") {
 	ob_start();
 	include("lang.php");
-	include("pml_config.inc.php");
+	include("config.php");
 	if(!isset($_SESSION)) { exit($lang['sessionproblem']); }
 	
 	if(isset($_SESSION['pml_userid'])) {
@@ -95,7 +95,7 @@ function pml_checklogin($goto,$status = "0") {
 // Used by other PML-functions, not to use alone.
 function pml_connect() {
 	include("lang.php");
-	include("pml_config.inc.php");
+	include("config.php");
 	
 	$connect = mysql_connect($settings['db_host'],$settings['db_user'],$settings['db_pass']);
 	if($connect == TRUE) {
@@ -127,7 +127,7 @@ function pml_connect() {
 function pml_login($todo = "",$action = "") {
 	ob_start();
 	include("lang.php");
-	include("pml_config.inc.php");
+	include("config.php");
 	if(!isset($_SESSION)) { exit($lang['sessionproblem']); }
 	
 	pml_connect();

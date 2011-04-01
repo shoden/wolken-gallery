@@ -2,7 +2,7 @@
 ERROR_REPORTING(E_ALL);
 session_start();
 
-include("phpmylogon.php");
+include("login.php");
 
 pml_logout('index.php');
 

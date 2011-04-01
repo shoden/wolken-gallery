@@ -3,7 +3,7 @@
 ERROR_REPORTING(E_ALL);
 session_start();
 
-require_once("phpmylogon.php");
+require_once("login.php");
 
 pml_login();
 
