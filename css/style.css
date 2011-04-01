@@ -38,8 +38,9 @@ body, html {
   padding: 0px;
   margin: 0px;
   background: #FFFFFF;
-  background-image: url('../images/header.jpg'),  url('../images/header-rightbg.jpg');
-  background-position: top left, top right;
+  text-align: left;
+  background-image: url('../images/header-rightbg.jpg');
+  background-position: top right;
   background-repeat: no-repeat;
 }
 
@@ -214,9 +215,37 @@ img.pic:hover {
   color: #333333;
   text-align: center;
   background: #b6d1ee;
-  width: 300px;
+  width: 276px;
   padding: 20px;
   margin: auto;
+}
+
+td.label {
+  text-align: right;
+}
+
+input#username, input#password { 
+ 	border: 1px solid #999;
+  background: #EFEFEF;
+	padding: 2px;
+  width: 150px;
+}
+
+input#submit { 
+  /*
+ 	border: 1px solid #999;
+  background: #EFEFEF;
+	padding: 2px;
+  width: 100px;
+  */
+ 	border: 1px solid #999;
+  padding: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: url('../images/taketitle-bg.jpg');
+  font-weight: bold;
+  font-size: 12px;
+  height: 20px;
 }
 
 .error {

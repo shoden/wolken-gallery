@@ -71,7 +71,7 @@ $total = count($file_list);
 		});
 	};
 </script>
-<div id="logo"></div>
+<div id="logo"><img src="images/header.jpg"></div>
 <div id="header">
   <table>
     <tr>

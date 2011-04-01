@@ -5,7 +5,7 @@ $lang['selectdberror']	= "<div class=\"error\">Error al conectar con la base de 
 $lang['connecterror']		= "<div class=\"error\">Error al conectar con la base de datos.</div>";
 
 $lang['login-already']		= "Ha iniciado sesi&oacute;n.";
-$lang['login-submitbutton']	= "Acceder";
+$lang['login-submitbutton']	= "Entrar";
 $lang['login-username']		= "Usuario";
 $lang['login-password']		= "Clave";
 $lang['login-cookie']		= "Recordarme";

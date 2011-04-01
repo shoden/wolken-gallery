@@ -254,17 +254,17 @@ function pml_login($todo = "",$action = "") {
   <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body id="loginbody">
-<div id="logo"></div>
+<div id="logo"><img src="../images/header.jpg"></div>
   <div id="loginwrapper">
   <div id="loginform">
 		<form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
 			<table>
 				<tr>
-					<td><label for="username"><?php echo $lang['login-username']; ?>:</label></td>
+					<td class="label"><label for="username"><?php echo $lang['login-username']; ?></label></td>
 					<td><input type="text" id="username" name="username" <?php if(isset($_POST['username'])) { echo 'value="'.$_POST['username'].'"'; } ?> /></td>
 				</tr>
 				<tr>
-					<td><label for="password"><?php echo $lang['login-password']; ?>:</label></td>
+					<td class="label"><label for="password"><?php echo $lang['login-password']; ?></label></td>
 					<td><input type="password" id="password" name="password" <?php if(isset($_POST['password'])) { echo 'value="'.$_POST['password'].'"'; } ?> /></td>
 				</tr>
 				<tr>
@@ -273,7 +273,7 @@ function pml_login($todo = "",$action = "") {
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="submit" name="submit" value="<?php echo $lang['login-submitbutton']; ?>" /></td>
+					<td><input type="submit" id="submit" name="submit" value="<?php echo $lang['login-submitbutton']; ?>" /></td>
 				</tr>
 			</table>
     </form>
