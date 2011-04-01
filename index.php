@@ -191,6 +191,6 @@ foreach($file_list as $file) {
 }
 ?>
 </div>
-<div id="footer">2011 &copy; Departamento de F&iacute;sica Aplicada, Universidad de C&oacute;rdoba</div>
+<div id="footer">2011 &copy; Departamento de F&iacute;sica Aplicada. Universidad de C&oacute;rdoba</div>
 </body>
 </html>
