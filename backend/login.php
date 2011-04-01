@@ -256,6 +256,7 @@ function pml_login($todo = "",$action = "") {
 <body id="loginbody">
 <div id="logo"><img src="../images/header.jpg"></div>
   <div id="loginwrapper">
+  <div class="webcam"><a href="../">Galer&iacute;a</a></div>
   <div id="loginform">
 		<form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
 			<table>

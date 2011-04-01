@@ -23,6 +23,14 @@ if( $_SESSION['pml_userid'] == "")
   <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
+<?php
+
+if(isset($_POST['submit'])) {
+  echo "<div class=\"submited\">Par&aacute;metros guardados correctamente.</div>";
+}
+
+?>
+
 <div id="logo"><img src="../images/header.jpg"></div>
 <div class="logout"><a href="logout.php"><img alt="Salir" border="0" src="../images/exit.png"></a></div>
 <div class="params">
