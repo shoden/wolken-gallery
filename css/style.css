@@ -260,3 +260,65 @@ input#submit {
   margin-bottom: 10px;
   margin-right: 10px;
 }
+
+.logout {
+  text-align: right;
+  width: 100%;
+  float: right;
+  margin: 4px;
+}
+
+.logout a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.paramstitle {
+  padding: 2px;
+  margin-bottom: 15px;
+  background: url('../images/taketitle-bg.jpg');
+  font-weight: bold;
+  font-size: 16px;
+  height: 20px;
+}
+
+.params {
+  width: 100%;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  background: #8da8c6;
+  float: left;
+  text-align: center;
+}
+
+#paramstable {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 0px;
+}
+
+.paramstableheader {
+  text-align: center;
+  font-size: 11px;
+}
+
+#paramstable tr {
+  margin: 0px;
+  padding: 0px;
+  background: #F00;
+}
+#paramstable tr td {
+  padding: 2px;
+  background: #b6d1ee;
+}
+
+.takeid {
+  font-weight: bold;
+}
+input.param { 
+ 	border: 1px solid #999;
+  background: #EFEFEF;
+	padding: 2px;
+  width: 50px;
+  text-align: center;
+}

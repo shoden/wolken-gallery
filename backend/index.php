@@ -23,14 +23,40 @@ if( $_SESSION['pml_userid'] == "")
   <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
-<a href="logout.php">Salir</a>
-<br>
+<div id="logo"><img src="../images/header.jpg"></div>
+<div class="logout"><a href="logout.php"><img alt="Salir" border="0" src="../images/exit.png"></a></div>
+<div class="params">
+<div class="paramstitle">Par&aacute;metros de las tomas</div>
 
-<div class="take">
-<div class="taketitle">Par&aacute;metros</div>
 
-Hola
+<form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
+<table id="paramstable">
+<tr>
+  <td class="paramstableheader">Toma</td>
+<?php
+  for($p=1; $p<=10; $p++){
+    echo "<td class=\"paramstableheader\">Parametro {$p}</td>";
+  }
+?>
+</tr>
+<tr>
+<?php
+  for($i=1; $i<=10; $i++){
+    echo "<tr>";
+    echo "<td class=\"takeid\">{$i}</td>";
 
+    for($j=1; $j<=10; $j++){
+    echo "<td><input class=\"param\" name=\"\" type\"text\" value=\"{$j}\"/></td>";
+    }
+
+    echo "</tr>";
+
+  }
+
+?>
+</table>
+					<input type="submit" id="submit" name="submit" value="Guardar" />
+</form>
 </div>
 <div id="footer">2011 &copy; Departamento de F&iacute;sica Aplicada. Universidad de C&oacute;rdoba</div>
 
