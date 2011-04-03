@@ -253,12 +253,12 @@ function pml_login($todo = "",$action = "") {
   <link rel="stylesheet" type="text/css" href="../css/style.css"/>
   <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
-<body id="loginbody">
+<body id="loginbody" onload="document.getElementById('username').focus();">
 <div id="logo"><img src="../images/header.jpg"></div>
   <div id="loginwrapper">
   <div class="webcam"><a href="../">Galer&iacute;a</a></div>
   <div id="loginform">
-		<form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
+		<form method="post" id="f" name="f" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
 			<table>
 				<tr>
 					<td class="label"><label for="username"><?php echo $lang['login-username']; ?></label></td>
