@@ -26,7 +26,11 @@ if( $_SESSION['pml_userid'] == "")
 <?php
 
 if(isset($_POST['submit'])) {
-  echo "<div class=\"submited\">Par&aacute;metros guardados correctamente.</div>";
+  if($_POST['1-1'] == 1)
+    echo "<div class=\"submited\">Par&aacute;metros guardados correctamente.</div>";
+  else
+    echo "<div class=\"error\">EL par&aacute;metro 1 tiene un valor no v&aacute;lido.</div>";
+
 }
 
 ?>
