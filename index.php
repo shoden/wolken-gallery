@@ -38,6 +38,9 @@ $total = count($file_list);
   </script>
 </head>
 <body>
+<noscript>
+<div class="error">Necesita activar Javascript en su navegador para poder ver esta p&aacute;gina correctamente.</div>
+</noscript>
 <script type="text/javascript">
 	window.onload = function(){		
 		
