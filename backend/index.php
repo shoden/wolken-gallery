@@ -27,12 +27,54 @@ require_once("funciones.php");
 <body>
 <?php
 
-if(isset($_POST['submit'])) {
-  if($_POST['1-1'] == 1)
-    echo "<div class=\"submited\">Par&aacute;metros guardados correctamente.</div>";
-  else
-    echo "<div class=\"error\">EL par&aacute;metro 1 tiene un valor no v&aacute;lido.</div>";
+$PARAMS = getParams();
+$PARAMS_COUNT = count($PARAMS);
+$TAKES = getTakes();
+$TAKES_COUNT = count($TAKES);
 
+if(isset($_POST['1-1'])) {
+
+  // Comprobación de los parámetros
+  $error = "";
+  for($i=1; $i<=$TAKES_COUNT; $i++){
+    if( isset($_POST["enable-".$i]) )
+      for($j=0; $j<$PARAMS_COUNT; $j++){
+        $new = (int)$_POST[$i."-".$j];
+        $min = (int)$PARAMS[$j]['min'];
+        $max = (int)$PARAMS[$j]['max'];
+
+        if($new < $min || $new > $max){
+          $error .= "ERROR: El valor de " . htmlentities($PARAMS[$j]['es']) . " en la toma {$i} tiene un valor fuera de rango.<br>\n";
+        }
+      }
+  }
+
+  if($error != "")
+    echo "<div class=\"error\">{$error}<br> Los cambios no han podido ser guardados.</div>";
+  else
+  {
+    // Actualizar tomas una a una
+    for($i=1; $i<=$TAKES_COUNT; $i++){
+      if( isset($_POST["enable-".$i]) ){
+        enableTake($i, 1);
+        for($j=0; $j<$PARAMS_COUNT; $j++){
+          $values[$PARAM_ID[$j]] = (int)$_POST[$i."-".$j];
+        }
+        setTake($i, $values);
+      }
+      else{
+        enableTake($i, 0);
+      }
+    }
+
+    // Actualizar vectores para mostrar
+    $PARAMS = getParams();
+    $PARAMS_COUNT = count($PARAMS);
+    $TAKES = getTakes();
+    $TAKES_COUNT = count($TAKES);
+
+    echo "<div class=\"submited\">Par&aacute;metros guardados correctamente.</div>";
+  }
 }
 
 ?>
@@ -41,16 +83,6 @@ if(isset($_POST['submit'])) {
 <div class="logout"><a href="logout.php"><img alt="Salir" border="0" src="../images/exit.png"></a></div>
 <div class="params">
 <div class="paramstitle">Par&aacute;metros de las tomas</div>
-
-<?php
-  $PARAMS = getParams();
-  $PARAMS_COUNT = count($PARAMS);
-  $PARAM_ID = array( "agudeza", "brillo", "contraste", "exposicion", "gamma", "ganancia", "saturacion", "tonalidad");
-
-  $TAKES = getTakes();
-  $TAKES_COUNT = count($TAKES);
-
-?>
 
 <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
 <table id="paramstable">
@@ -67,14 +99,16 @@ if(isset($_POST['submit'])) {
 <tr>
 <?php
   for($i=0; $i<$TAKES_COUNT; $i++){
-    echo "<tr>\n";
-    echo "<td class=\"takeid\">". ($i+1) ."</td>\n";
-
     $checked = ($TAKES[$i]['habilitado']=="1") ? "checked" : "";
-    echo "<td class=\"takeenable\"><input type=\"checkbox\" name=\"enable-". ($i+1) . "\" value=\"\" {$checked}></a></td>\n";
+    $tdclass= ($TAKES[$i]['habilitado']=="1") ? "enabled" : "disabled";
+
+    echo "<tr>\n";
+    echo "<td class=\"paramstableheader\">". ($i+1) ."</td>\n";
+
+    echo "<td class=\"{$tdclass}\"><input type=\"checkbox\" name=\"enable-". ($i+1) . "\" value=\"\" {$checked}></a></td>\n";
 
     for($j=0; $j<$PARAMS_COUNT; $j++){
-      echo "<td><input class=\"param\" name=\"". ($i+1) . "-{$j}\" type=\"text\" value=\"". $TAKES[$i][$PARAM_ID[$j]] ."\"/></td>\n";
+      echo "<td class=\"{$tdclass}\"><input class=\"{$tdclass}\" name=\"". ($i+1) . "-{$j}\" type=\"text\" value=\"". $TAKES[$i][$PARAM_ID[$j]] ."\"/></td>\n";
     }
 
     echo "</tr>\n";

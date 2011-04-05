@@ -30,9 +30,10 @@ function getParams()
   }
   mysql_free_result($res);
 
-  //print_r($v);
   return $v;
 }
+
+$PARAM_ID = array( "agudeza", "brillo", "contraste", "exposicion", "gamma", "ganancia", "saturacion", "tonalidad");
 
 function getTakes()
 {
@@ -47,8 +48,34 @@ function getTakes()
   }
   mysql_free_result($res);
 
-  //print_r($v);
   return $v;
+}
+
+function enableTake($id, $enabled)
+{
+  $sql ="UPDATE tomas SET habilitado={$enabled} WHERE id={$id};";
+  $res = mysql_query($sql);
+
+  return $res;
+}
+
+function setTake($id, $values)
+{
+
+  global $PARAM_ID;
+
+  $PARAMS = getParams();
+  $PARAMS_COUNT = count($PARAMS);
+
+  $v="";
+  for($i=0; $i<$PARAMS_COUNT; $i++) {
+    $v .= $PARAM_ID[$i] . "=" . $values[$PARAM_ID[$i]] . ", ";
+  }
+
+  $sql = "UPDATE tomas SET " . substr($v,0,-2) . " WHERE id={$id};";
+  $res = mysql_query($sql);
+
+  return $res;
 }
 
 ?>

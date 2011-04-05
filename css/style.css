@@ -317,17 +317,25 @@ input#submit:hover {
 .paramstableheader {
   text-align: center;
   font-size: 11px;
+  font-weight: bold;
+  color: #333;
+  border: solid 1px #b6d1ee;
 }
 
 #paramstable tr {
   margin: 0px;
   padding: 0px;
-  background: #F00;
 }
 
-#paramstable tr td {
+#paramstable tr td.enabled {
   padding: 2px;
   background: #b6d1ee;
+}
+
+#paramstable tr td.disabled {
+  padding: 2px;
+  color: #AAA;
+  background: #ffd7d7;
 }
 
 .takeid {
@@ -338,9 +346,18 @@ input#submit:hover {
   background: #EFEFEF;
 }
 
-input.param { 
+#paramstable tr td.enabled input { 
  	border: 1px solid #999;
   background: #EFEFEF;
+	padding: 2px;
+  width: 50px;
+  text-align: center;
+}
+
+#paramstable tr td.disabled input { 
+  color: #AAA;
+ 	border: 1px solid #AAA;
+  background: #ffd7d7;
 	padding: 2px;
   width: 50px;
   text-align: center;
