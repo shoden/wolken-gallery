@@ -20,7 +20,7 @@ require_once("funciones.php");
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="" />
   <meta name="description" content="" />
-  <title>Galler&iacute;a</title>
+  <title>Administraci&oacute;n</title>
   <link rel="stylesheet" type="text/css" href="../css/style.css"/>
   <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>

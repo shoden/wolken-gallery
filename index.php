@@ -23,7 +23,7 @@ $total = count($file_list);
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="" />
   <meta name="description" content="" />
-  <title>Galler&iacute;a</title>
+  <title>Galer&iacute;a</title>
   <script type="text/javascript" src="js/jquery.1.4.2.js"></script>
   <script type="text/javascript" src="js/jsDatePick.jquery.min.1.3.js"></script>
   <script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
