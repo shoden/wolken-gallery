@@ -279,10 +279,13 @@ input#submit:hover {
 }
 
 .logout {
+  background: #8da8c6;
   text-align: right;
   width: 100%;
   float: right;
-  margin: 4px;
+  margin: 0px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .logout a {
