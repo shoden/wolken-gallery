@@ -231,13 +231,12 @@ input#username, input#password {
   width: 150px;
 }
 
-input#submit { 
-  /*
+input#username:focus, input#password:focus { 
  	border: 1px solid #999;
-  background: #EFEFEF;
-	padding: 2px;
-  width: 100px;
-  */
+  background: #ffd895;
+}
+
+input#submit { 
  	border: 1px solid #999;
   padding: 2px;
   padding-left: 10px;
@@ -246,6 +245,11 @@ input#submit {
   font-weight: bold;
   font-size: 12px;
   height: 20px;
+}
+
+input#submit:hover { 
+  background: url('../images/taketitle-bg2.jpg');
+  color: #000098;
 }
 
 .error {
@@ -320,6 +324,7 @@ input#submit {
   padding: 0px;
   background: #F00;
 }
+
 #paramstable tr td {
   padding: 2px;
   background: #b6d1ee;
@@ -328,10 +333,19 @@ input#submit {
 .takeid {
   font-weight: bold;
 }
+
+.takeenable {
+  background: #EFEFEF;
+}
+
 input.param { 
  	border: 1px solid #999;
   background: #EFEFEF;
 	padding: 2px;
   width: 50px;
   text-align: center;
+}
+
+input.param:focus { 
+  background: #ffd895;
 }

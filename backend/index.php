@@ -10,6 +10,8 @@ pml_login();
 if( $_SESSION['pml_userid'] == "")
   exit;
 
+require_once("funciones.php");
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-es" lang="es-es" dir="ltr">
@@ -40,29 +42,42 @@ if(isset($_POST['submit'])) {
 <div class="params">
 <div class="paramstitle">Par&aacute;metros de las tomas</div>
 
+<?php
+  $PARAMS = getParams();
+  $PARAMS_COUNT = count($PARAMS);
+  $PARAM_ID = array( "agudeza", "brillo", "contraste", "exposicion", "gamma", "ganancia", "saturacion", "tonalidad");
+
+  $TAKES = getTakes();
+  $TAKES_COUNT = count($TAKES);
+
+?>
 
 <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
 <table id="paramstable">
 <tr>
   <td class="paramstableheader">Toma</td>
+  <td class="paramstableheader"></td>
 <?php
-  for($p=1; $p<=10; $p++){
-    echo "<td class=\"paramstableheader\">Parametro {$p}</td>\n";
+  for($p=0; $p<$PARAMS_COUNT; $p++){
+    echo "<td class=\"paramstableheader\">". htmlentities($PARAMS[$p]['es']) ."<br>\n";
+    echo "[" . htmlentities($PARAMS[$p]['min']) . " : " . htmlentities($PARAMS[$p]['max']) ."]</td>\n";
   }
 ?>
 </tr>
 <tr>
 <?php
-  for($i=1; $i<=10; $i++){
+  for($i=0; $i<$TAKES_COUNT; $i++){
     echo "<tr>\n";
-    echo "<td class=\"takeid\">{$i}</td>\n";
+    echo "<td class=\"takeid\">". ($i+1) ."</td>\n";
 
-    for($j=1; $j<=10; $j++){
-    echo "<td><input class=\"param\" name=\"{$i}-{$j}\" type=\"text\" value=\"{$j}\"/></td>\n";
+    $checked = ($TAKES[$i]['habilitado']=="1") ? "checked" : "";
+    echo "<td class=\"takeenable\"><input type=\"checkbox\" name=\"enable-". ($i+1) . "\" value=\"\" {$checked}></a></td>\n";
+
+    for($j=0; $j<$PARAMS_COUNT; $j++){
+      echo "<td><input class=\"param\" name=\"". ($i+1) . "-{$j}\" type=\"text\" value=\"". $TAKES[$i][$PARAM_ID[$j]] ."\"/></td>\n";
     }
 
     echo "</tr>\n";
-
   }
 
 ?>
