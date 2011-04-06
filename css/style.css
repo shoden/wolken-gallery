@@ -169,6 +169,7 @@ body, html {
   margin-bottom: 15px;
   background: #8da8c6;
   float: left;
+  width: 100%;
 }
 
 img.pic {
@@ -184,10 +185,10 @@ img.pic:hover {
 
 .thumb {
   float: left;
-  padding: 5px;
+  padding: 3px;
   color: #222;
   background: #638ac3;
-  margin: 5px;
+  margin: 2px;
   text-align: left;
   font-family: "Verdana";
   font-size: 10px;

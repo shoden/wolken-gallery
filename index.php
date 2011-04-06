@@ -1,20 +1,8 @@
 <?php
 error_reporting(E_ALL);
 
-if(!is_dir('img/thumbs')) die('thumbs directory was not found');
-$file_list = array();
+include_once("funciones.php");
 
-if ($handle = opendir('img/thumbs')) {
-   while (false !== ($file = readdir($handle))) {
-      if (strtolower(array_pop(explode('.',$file))) == 'jpg') {
-         $file_list[] = $file;
-      }
-   }
-   closedir($handle);
-}
-
-$count = 0;
-$total = count($file_list);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-es" lang="es-es" dir="ltr">
@@ -108,93 +96,18 @@ echo "<a class=\"takelink\" href=\"#{$h}{$m}\">{$h}:{$m}</a>&nbsp;\n";
   </table>
 </div>
 
-<div class="take">
-<a name="0700" id="0700"></a>
-<div class="taketitle">07:00</div>
 <?php
-sort($file_list);
-foreach($file_list as $file) {
-  $path = 'img/thumbs/'.$file;
-  $title = "<center><p class=\"thumbtitle\">{$file}</p></center>";
-  $title .= "Par&aacute;metro 1: 23<br>";
-  $title .= "Par&aacute;metro 2: 145<br>";
-  $title .= "Par&aacute;metro 3: 200<br>";
-  $title .= "Par&aacute;metro 4: 7<br>";
-  if(!is_file('img/' . $file)) continue;
-  echo "<div class=\"thumb\">";
-  echo "<a rel=\"lightbox[a]\" href=\"img/{$file}\" title=\"{$file}\">";
-  echo "<img src=\"{$path}\" class=\"pic\" alt=\"img/{$file}\"></a><br>\n";
-  echo $title;
-  echo "</div>";
-}
-?>
-</div>
 
-<div class="take">
-<a name="0710" id="0710"></a>
-<div class="taketitle">07:10</div>
-<?php
-sort($file_list);
-foreach($file_list as $file) {
-  $path = 'img/thumbs/'.$file;
-  $title = "<center><p class=\"thumbtitle\">{$file}</p></center>";
-  $title .= "Par&aacute;metro 1: 23<br>";
-  $title .= "Par&aacute;metro 2: 145<br>";
-  $title .= "Par&aacute;metro 3: 200<br>";
-  $title .= "Par&aacute;metro 4: 7<br>";
-  if(!is_file('img/' . $file)) continue;
-  echo "<div class=\"thumb\">";
-  echo "<a rel=\"lightbox[a]\" href=\"img/{$file}\" title=\"{$file}\">";
-  echo "<img src=\"{$path}\" class=\"pic\" alt=\"img/{$file}\"></a><br>\n";
-  echo $title;
-  echo "</div>";
-}
-?>
-</div>
+//showTake( "2011-04-06", "19:20" );
+//showTake( "2011-04-06", "19:30" );
+//showTake( "2011-04-06", "19:38" );
+//showTake( "2011-04-06", "19:50" );
 
-<div class="take">
-<a name="0720" id="0720"></a>
-<div class="taketitle">07:20</div>
-<?php
-sort($file_list);
-foreach($file_list as $file) {
-  $path = 'img/thumbs/'.$file;
-  $title = "<center><p class=\"thumbtitle\">{$file}</p></center>";
-  $title .= "Par&aacute;metro 1: 23<br>";
-  $title .= "Par&aacute;metro 2: 145<br>";
-  $title .= "Par&aacute;metro 3: 200<br>";
-  $title .= "Par&aacute;metro 4: 7<br>";
-  if(!is_file('img/' . $file)) continue;
-  echo "<div class=\"thumb\">";
-  echo "<a rel=\"lightbox[a]\" href=\"img/{$file}\" title=\"{$file}\">";
-  echo "<img src=\"{$path}\" class=\"pic\" alt=\"img/{$file}\"></a><br>\n";
-  echo $title;
-  echo "</div>";
-}
 ?>
-</div>
 
-<div class="take">
-<a name="0730" id="0730"></a>
-<div class="taketitle">07:30</div>
-<?php
-sort($file_list);
-foreach($file_list as $file) {
-  $path = 'img/thumbs/'.$file;
-  $title = "<center><p class=\"thumbtitle\">{$file}</p></center>";
-  $title .= "Par&aacute;metro 1: 23<br>";
-  $title .= "Par&aacute;metro 2: 145<br>";
-  $title .= "Par&aacute;metro 3: 200<br>";
-  $title .= "Par&aacute;metro 4: 7<br>";
-  if(!is_file('img/' . $file)) continue;
-  echo "<div class=\"thumb\">";
-  echo "<a rel=\"lightbox[a]\" href=\"img/{$file}\" title=\"{$file}\">";
-  echo "<img src=\"{$path}\" class=\"pic\" alt=\"img/{$file}\"></a><br>\n";
-  echo $title;
-  echo "</div>";
-}
-?>
-</div>
+
+
+
 <div id="footer">2011 &copy; Departamento de F&iacute;sica Aplicada. Universidad de C&oacute;rdoba</div>
 </body>
 </html>
