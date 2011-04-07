@@ -28,7 +28,7 @@ function showTake($day, $time)
   $total = count($file_list);
 
 ?>
-  <a name="<?php echo $tim; ?>" id="<?php echo $tim; ?>"></a>
+  <div class="ancla"><a name="<?php echo $tim; ?>" id="<?php echo $tim; ?>"></a></div>
   <div class="take">
     <div class="taketitle"><?php echo $time; ?></div>
 
@@ -59,4 +59,14 @@ function showTake($day, $time)
 
 <?php
 }
+
+function showTakeList()
+{
+  global $captures, $ncaptures;
+
+  for($i=0; $i<$ncaptures; $i++){
+    echo "<div class=\"takelink\"><a href=\"#". str_replace( ":", "", $captures[$i]['hora']) ."\">". $captures[$i]['hora'] ."</a></div>\n";
+  }
+}
+
 ?>

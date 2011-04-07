@@ -93,18 +93,7 @@ include_once("funciones.php");
           <div class="webcam"><a href="#">Webcam 2</a></div>
           <div class="webcam"><a href="#">Webcam 1</a></div>
           <br><br><br>
-          <div id="takelist">
-<?php
-
-for($h=7; $h<22; $h++)
-  for($m=0; $m<60; $m+=10){
-    $h = str_pad($h, 2, "0", STR_PAD_LEFT); 
-    $m = str_pad($m, 2, "0", STR_PAD_LEFT); 
-    echo "<div class=\"takelink\"><a href=\"#{$h}{$m}\">{$h}:{$m}</a></div>\n";
-  }
-
-?>
-          </div>
+          <div id="takelist"></div>
       </td>
     </tr>
   </table>

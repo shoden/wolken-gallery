@@ -19,19 +19,36 @@ function ajax(fecha)
   
   ajax.open("POST", "datos.php", true);
   ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  ajax.send("f="+fecha);  
+  ajax.send("f="+fecha+"&list=1");  
   
   ajax.onreadystatechange=function()
 	{
 	  if (ajax.readyState==4)
 		{	
-			  //alert(ajax.responseText);
-			  //Separo los elementos que he enviado desde el php en un vector
-			  //var a = ajax.responseText.split('$');
-			  
-			  parent.document.getElementById("takes").innerHTML=ajax.responseText;//a[0] + " - " + a[1];
+			  parent.document.getElementById("takelist").innerHTML=ajax.responseText;
         parent.updateLightBox();
+
         if(ajax.responseText=="")
+			    parent.document.getElementById("takelist").style.display ="none";
+        else
+			    parent.document.getElementById("takelist").style.display ="inline";
+		}
+
+  }
+
+  var ajax2=nuevoAjax();
+  
+  ajax2.open("POST", "datos.php", true);
+  ajax2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  ajax2.send("f="+fecha);  
+  
+  ajax2.onreadystatechange=function()
+	{
+	  if (ajax2.readyState==4)
+		{	
+			  parent.document.getElementById("takes").innerHTML=ajax2.responseText;
+        parent.updateLightBox();
+        if(ajax2.responseText=="")
 			    parent.document.getElementById("takes").innerHTML="<div class='error'>Este d&iacute;a no tiene capturas.</div>";
 		}
 

@@ -17,8 +17,12 @@ $nparams = count($params);
 $captures = getCapturesByDay($fecha);
 $ncaptures = count($captures);
 
-for($i=0; $i<$ncaptures; $i++) {
-  showTake( $fecha, $captures[$i]['hora'] );
-}
+
+if(isset($_POST['list']))
+  showTakeList();
+else
+  for($i=0; $i<$ncaptures; $i++) {
+    showTake( $fecha, $captures[$i]['hora'] );
+  }
 
 ?>

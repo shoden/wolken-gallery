@@ -173,6 +173,13 @@ div.takelink a:hover {
   width: 100%;
 }
 
+.ancla {
+  margin-bottom: 10px;
+  background: #8da8c6;
+  float: left;
+  width: 100%;
+}
+
 .take {
   margin-bottom: 15px;
   background: #8da8c6;
@@ -213,6 +220,8 @@ img.pic:hover {
   color: #FFFFFF;
   width: 100%;
   margin-bottom: 20px;
+  float: left;
+  position: relative;
 }
 
 #loginwrapper {
