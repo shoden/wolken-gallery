@@ -16,6 +16,8 @@ function prueba()
 function ajax(fecha)
 {	
   var ajax=nuevoAjax();
+
+	parent.document.getElementById("takelist").style.display ="none";
   
   ajax.open("POST", "datos.php", true);
   ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -27,13 +29,7 @@ function ajax(fecha)
 		{	
 			  parent.document.getElementById("takelist").innerHTML=ajax.responseText;
         parent.updateLightBox();
-
-        if(ajax.responseText=="")
-			    parent.document.getElementById("takelist").style.display ="none";
-        else
-			    parent.document.getElementById("takelist").style.display ="inline";
 		}
-
   }
 
   var ajax2=nuevoAjax();
@@ -50,8 +46,9 @@ function ajax(fecha)
         parent.updateLightBox();
         if(ajax2.responseText=="")
 			    parent.document.getElementById("takes").innerHTML="<div class='error'>Este d&iacute;a no tiene capturas.</div>";
+        else
+			    parent.document.getElementById("takelist").style.display ="inline";
 		}
-
   }
 }
 

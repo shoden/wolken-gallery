@@ -45,12 +45,11 @@ function showTake($day, $time)
     echo $title;
 
     echo "<center><p class=\"thumbtitle\">{$file}</p></center>";
-    echo "<table";
+    echo "<table>";
     for($p=0; $p<$nparams; $p++){
       echo "<tr><td class='paramname'>" . htmlentities($params[$p]['es']) . "</td><td class='paramvalue'>" . $caps[$i][$params[$p]['id']] . "</td></tr>\n";
     }
-    echo "</table";
-
+    echo "</table>";
     echo "</div>";
     $i++;
   }
