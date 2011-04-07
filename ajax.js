@@ -1,17 +1,4 @@
-
 top.ajax = ajax;
-
-var vector=new Array();
-var vector2=new Array();
-
-function prueba()
-{  
-  var cadena = "";
-  for (var i=0;i<vector.length-1;i++){
-    cadena = cadena + vector[i] + " ";
-  }
-  alert (cadena);
-}
 
 function ajax(fecha)
 {	
@@ -25,10 +12,9 @@ function ajax(fecha)
   
   ajax.onreadystatechange=function()
 	{
-	  if (ajax.readyState==4)
-		{	
-			  parent.document.getElementById("takelist").innerHTML=ajax.responseText;
-        parent.updateLightBox();
+	  if (ajax.readyState==4){	
+      parent.document.getElementById("takelist").innerHTML=ajax.responseText;
+      parent.updateLightBox();
 		}
   }
 
@@ -40,38 +26,35 @@ function ajax(fecha)
   
   ajax2.onreadystatechange=function()
 	{
-	  if (ajax2.readyState==4)
-		{	
-			  parent.document.getElementById("takes").innerHTML=ajax2.responseText;
-        parent.updateLightBox();
-        if(ajax2.responseText=="")
-			    parent.document.getElementById("takes").innerHTML="<div class='error'>Este d&iacute;a no tiene capturas.</div>";
-        else
-			    parent.document.getElementById("takelist").style.display ="inline";
+	  if (ajax2.readyState==4){	
+      parent.document.getElementById("takes").innerHTML=ajax2.responseText;
+      parent.updateLightBox();
+
+      if(ajax2.responseText=="")
+        parent.document.getElementById("takes").innerHTML="<div class='error'>Este d&iacute;a no tiene capturas.</div>";
+      else
+        parent.document.getElementById("takelist").style.display ="inline";
 		}
   }
 }
 
-//Función para crear un objeto de tipo AJAX
 function nuevoAjax()
 { 
-	// Crea el objeto AJAX.
+	// Objeto AJAX
 	var xmlhttp=false; 
-	try 
-	{ 
-		// Creacion del objeto AJAX para navegadores no IE
+	try{ 
+		// Para navegadores distintos de IE
 		xmlhttp=new ActiveXObject("Msxml2.XMLHTTP"); 
 	}
-	catch(e)
-	{
-		try
-		{ 
-			// Creacion del objet AJAX para IE 
+	catch(e){
+		try{ 
+			// Para IE 
 			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP"); 
 		} 
 		catch(E) { xmlhttp=false; }
 	}
-	if (!xmlhttp && typeof XMLHttpRequest!="undefined") { xmlhttp=new XMLHttpRequest(); } 
+	if(!xmlhttp && typeof XMLHttpRequest!="undefined")
+    xmlhttp=new XMLHttpRequest();
 
 	return xmlhttp; 
 }
