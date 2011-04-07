@@ -13,7 +13,7 @@ include_once("funciones.php");
   <script type="text/javascript" src="js/jquery.1.4.2.js"></script>
   <script type="text/javascript" src="js/jsDatePick.jquery.min.1.3.js"></script>
   <script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
-  <script type="text/javascript" src="ajax.js"></script>
+  <script type="text/javascript" src="js/ajax.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <link rel="stylesheet" type="text/css" href="css/jsDatePick_ltr.css" media="all" />
   <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
@@ -23,7 +23,7 @@ include_once("funciones.php");
 <noscript>
 <div class="error">Necesita activar Javascript en su navegador para poder ver esta p&aacute;gina correctamente.</div>
 </noscript>
-<script type="text/javascript" src="body.js"></script>
+<script type="text/javascript" src="js/body.js"></script>
 <div id="logo"><img src="images/header.jpg"></div>
 <div id="header">
   <table>
