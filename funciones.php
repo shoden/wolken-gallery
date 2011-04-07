@@ -6,7 +6,11 @@ function showTake($day, $time)
   $_DIR ="wolken/{$day}/{$tim}/";
   $_THUMBS = $_DIR . "thumbs/";
 
-  if(!is_dir($_THUMBS)) die('thumbs directory was not found');
+  if(!is_dir($_THUMBS)) {
+    echo "<div class='error'>El directorio <b>{$_DIR}</b> no existe.</div>";
+    return 1;
+  };
+
   $file_list = array();
 
   if ($handle = opendir($_THUMBS)) {
@@ -22,8 +26,8 @@ function showTake($day, $time)
   $total = count($file_list);
 
 ?>
-  <div class="take">
   <a name="<?php echo $tim; ?>" id="<?php echo $tim; ?>"></a>
+  <div class="take">
     <div class="taketitle"><?php echo $time; ?></div>
 
 <?php

@@ -15,6 +15,7 @@ include_once("funciones.php");
   <script type="text/javascript" src="js/jquery.1.4.2.js"></script>
   <script type="text/javascript" src="js/jsDatePick.jquery.min.1.3.js"></script>
   <script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
+  <script type="text/javascript" src="ajax.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <link rel="stylesheet" type="text/css" href="css/jsDatePick_ltr.css" media="all" />
   <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
@@ -30,6 +31,20 @@ include_once("funciones.php");
 <div class="error">Necesita activar Javascript en su navegador para poder ver esta p&aacute;gina correctamente.</div>
 </noscript>
 <script type="text/javascript">
+
+  function fill(year, month, day){
+    var d = year + "-";
+    d += (month<10) ? "0" + month : month;
+    d += (day<10) ? "-0" + day : "-" + day;
+
+    return d;
+  }
+
+  function updateLightBox()
+  {
+    $('.take a').lightBox();
+  }
+
 	window.onload = function(){		
 		
 		g_globalObject = new JsDatePick({
@@ -55,10 +70,13 @@ include_once("funciones.php");
     document.getElementById("currentdate").innerHTML = g_globalObject.currentDay 
       + "/" + g_globalObject.currentMonth
       + "/" + g_globalObject.currentYear;
+    //ajax(fill(g_globalObject.currentYear, g_globalObject.currentMonth, g_globalObject.currentDay));
 		
 		g_globalObject.setOnSelectedDelegate(function(){
 			var obj = g_globalObject.getSelectedDay();
 			document.getElementById("currentdate").innerHTML = obj.day + "/" + obj.month + "/" + obj.year;
+			document.getElementById("takes").innerHTML="<div style='color:#FFF;'>Cargando....</div>";
+      ajax(fill(obj.year, obj.month, obj.day));
 		});
 	};
 </script>
@@ -81,13 +99,8 @@ for($h=7; $h<22; $h++)
   for($m=0; $m<60; $m+=10){
     $h = str_pad($h, 2, "0", STR_PAD_LEFT); 
     $m = str_pad($m, 2, "0", STR_PAD_LEFT); 
-    echo "<a class =\"takelink\" href=\"#{$h}{$m}\">{$h}:{$m}</a>&nbsp;\n";
+    echo "<div class=\"takelink\"><a href=\"#{$h}{$m}\">{$h}:{$m}</a></div>\n";
   }
-
-$h=22; $m=0;
-$h = str_pad($h, 2, "0", STR_PAD_LEFT); 
-$m = str_pad($m, 2, "0", STR_PAD_LEFT); 
-echo "<a class=\"takelink\" href=\"#{$h}{$m}\">{$h}:{$m}</a>&nbsp;\n";
 
 ?>
           </div>
@@ -96,15 +109,14 @@ echo "<a class=\"takelink\" href=\"#{$h}{$m}\">{$h}:{$m}</a>&nbsp;\n";
   </table>
 </div>
 
+<div id="takes">
 <?php
 
-//showTake( "2011-04-06", "19:20" );
-//showTake( "2011-04-06", "19:30" );
-//showTake( "2011-04-06", "19:38" );
-//showTake( "2011-04-06", "19:50" );
+
+  showTake( "2011-04-07", "09:18" );
 
 ?>
-
+<div>
 
 
 

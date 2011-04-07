@@ -148,7 +148,11 @@ body, html {
   height: 20px;
 }
 
-.takelink {
+div.takelink {
+  float: left;
+  margin: 2px;
+}
+div.takelink a {
   text-decoration: none;
   color: #000000;
   font-size: 14px;
@@ -159,7 +163,7 @@ body, html {
   border: solid 1px #666;
 }
 
-.takelink:hover {
+div.takelink a:hover {
   background: url('../images/taketitle-bg2.jpg');
   color: #000098;
   border: solid 1px #000098;
