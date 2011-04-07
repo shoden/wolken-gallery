@@ -251,10 +251,10 @@ function pml_login($todo = "",$action = "") {
   <meta name="description" content="" />
   <title>Administraci&oacute;n</title>
   <link rel="stylesheet" type="text/css" href="../css/style.css"/>
-  <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body id="loginbody" onload="document.getElementById('username').focus();">
-<div id="logo"><img src="../images/header.jpg"></div>
+<div id="logo"><img src="../img/header.jpg"></div>
   <div id="loginwrapper">
   <div class="webcam"><a href="../">Galer&iacute;a</a></div>
   <div id="loginform">

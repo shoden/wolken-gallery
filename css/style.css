@@ -14,7 +14,7 @@ body, html {
   padding-left: 10px;
   padding-right: 10px;
   background: #FEFEFE;
-  background-image: url('../images/currentdate-leftbg.jpg'),  url('../images/currentdate-rightbg.jpg');
+  background-image: url('../img/currentdate-leftbg.jpg'),  url('../img/currentdate-rightbg.jpg');
   background-position: top left, top right;
   background-repeat: no-repeat;
   margin-top: 10px;
@@ -40,7 +40,7 @@ body, html {
   margin: 0px;
   background: #FFFFFF;
   text-align: left;
-  background-image: url('../images/header-rightbg.jpg');
+  background-image: url('../img/header-rightbg.jpg');
   background-position: top right;
   background-repeat: no-repeat;
 }
@@ -81,7 +81,7 @@ body, html {
   padding: 5px;
   padding-left: 10px;
   background: #FEFEFE;
-  background-image: url('../images/currentdate-leftbg.jpg');
+  background-image: url('../img/currentdate-leftbg.jpg');
   background-position: top left;
   background-repeat: no-repeat;
   margin-top: 10px;
@@ -91,7 +91,7 @@ body, html {
 
 #currentdate{
   background: #FEFEFE;
-  background-image: url('../images/currentdate-rightbg.jpg');
+  background-image: url('../img/currentdate-rightbg.jpg');
   background-position: top right;
   background-repeat: no-repeat;
   font-weight: bold;
@@ -143,7 +143,7 @@ body, html {
 .taketitle {
   padding: 2px;
   margin-bottom: 15px;
-  background: url('../images/taketitle-bg.jpg');
+  background: url('../img/taketitle-bg.jpg');
   font-weight: bold;
   font-size: 16px;
   height: 20px;
@@ -159,13 +159,13 @@ div.takelink a {
   font-size: 14px;
   padding: 2px;
   margin: 1px;
-  background: url('../images/taketitle-bg.jpg');
+  background: url('../img/taketitle-bg.jpg');
   height: 20px;
   border: solid 1px #666;
 }
 
 div.takelink a:hover {
-  background: url('../images/taketitle-bg2.jpg');
+  background: url('../img/taketitle-bg2.jpg');
   color: #000098;
   border: solid 1px #000098;
 }
@@ -260,14 +260,14 @@ input#submit {
   padding: 2px;
   padding-left: 10px;
   padding-right: 10px;
-  background: url('../images/taketitle-bg.jpg');
+  background: url('../img/taketitle-bg.jpg');
   font-weight: bold;
   font-size: 12px;
   height: 20px;
 }
 
 input#submit:hover { 
-  background: url('../images/taketitle-bg2.jpg');
+  background: url('../img/taketitle-bg2.jpg');
   color: #000098;
 }
 
@@ -314,7 +314,7 @@ input#submit:hover {
 .paramstitle {
   padding: 2px;
   margin-bottom: 15px;
-  background: url('../images/taketitle-bg.jpg');
+  background: url('../img/taketitle-bg.jpg');
   font-weight: bold;
   font-size: 16px;
   height: 20px;

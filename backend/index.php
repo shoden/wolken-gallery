@@ -22,7 +22,7 @@ require_once("funciones.php");
   <meta name="description" content="" />
   <title>Administraci&oacute;n</title>
   <link rel="stylesheet" type="text/css" href="../css/style.css"/>
-  <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
 <?php
@@ -79,8 +79,8 @@ if(isset($_POST['1-1'])) {
 
 ?>
 
-<div id="logo"><img src="../images/header.jpg"></div>
-<div class="logout"><a href="logout.php"><img alt="Salir" border="0" src="../images/exit.png"></a></div>
+<div id="logo"><img src="../img/header.jpg"></div>
+<div class="logout"><a href="logout.php"><img alt="Salir" border="0" src="../img/exit.png"></a></div>
 <div class="params">
 <div class="paramstitle">Informaci&oacute;n del servidor</div>
 

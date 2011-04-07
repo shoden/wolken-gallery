@@ -17,14 +17,14 @@ include_once("inc/funciones.php");
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <link rel="stylesheet" type="text/css" href="css/jsDatePick_ltr.css" media="all" />
   <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
-  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
 <noscript>
 <div class="error">Necesita activar Javascript en su navegador para poder ver esta p&aacute;gina correctamente.</div>
 </noscript>
 <script type="text/javascript" src="js/body.js"></script>
-<div id="logo"><img src="images/header.jpg"></div>
+<div id="logo"><img src="img/header.jpg"></div>
 <div id="header">
   <table>
     <tr>

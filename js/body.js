@@ -23,7 +23,7 @@ document.getElementById("currentdate").innerHTML = g_globalObject.currentDay
   + "/" + g_globalObject.currentMonth
   + "/" + g_globalObject.currentYear;
 
-document.getElementById("takes").innerHTML="<img src='images/cargando.png'>";
+document.getElementById("takes").innerHTML="<img src='img/cargando.png'>";
 
 ajax(fill(g_globalObject.currentYear,
      g_globalObject.currentMonth,
@@ -32,7 +32,7 @@ ajax(fill(g_globalObject.currentYear,
 g_globalObject.setOnSelectedDelegate(function(){
   var obj = g_globalObject.getSelectedDay();
   document.getElementById("currentdate").innerHTML = obj.day + "/" + obj.month + "/" + obj.year;
-  document.getElementById("takes").innerHTML="<img src='images/cargando.png'>";
+  document.getElementById("takes").innerHTML="<img src='img/cargando.png'>";
   ajax(fill(obj.year, obj.month, obj.day));
   });
 };
