@@ -4,16 +4,21 @@
 
 include "conectar.php";  
 include "funciones.php";  
+include "backend/funciones.php";  
 
 $fecha = $_POST['f'];
 
-for($i=0; $i<300;$i++)
-  showTake( $fecha, "09:27" );
+//sleep(1);
 
-//parse_str($row[0], $a);
-//echo utf8_encode($row[0])."$".$a'dia'];
-//
+db_connect();
 
+$params = getParams();
+$nparams = count($params);
+$captures = getCapturesByDay($fecha);
+$ncaptures = count($captures);
 
+for($i=0; $i<$ncaptures; $i++) {
+  showTake( $fecha, $captures[$i]['hora'] );
+}
 
 ?>

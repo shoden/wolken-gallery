@@ -78,4 +78,36 @@ function setTake($id, $values)
   return $res;
 }
 
+function getCapturesByDay($day)
+{
+  $sql ="SELECT DATE_FORMAT( hora, '%H:%i' ) AS hora FROM capturas WHERE dia=\"{$day}\" GROUP BY hora;";
+  
+  $res = mysql_query($sql);
+  if(mysql_num_rows($res) > 0) {
+    $i=0;
+    while ($row = mysql_fetch_assoc($res)) {
+         $v[$i++] = $row;
+    }
+  }
+  mysql_free_result($res);
+
+  return $v;
+}
+
+function getCapturesByTake($day, $time)
+{
+  $sql ="SELECT * FROM capturas WHERE dia=\"{$day}\" AND hora LIKE \"{$time}:%\";";
+  
+  $res = mysql_query($sql);
+  if(mysql_num_rows($res) > 0) {
+    $i=0;
+    while ($row = mysql_fetch_assoc($res)) {
+         $v[$i++] = $row;
+    }
+  }
+  mysql_free_result($res);
+
+  return $v;
+}
+
 ?>

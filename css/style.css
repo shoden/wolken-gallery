@@ -199,7 +199,7 @@ img.pic:hover {
   margin: 2px;
   text-align: left;
   font-family: "Verdana";
-  font-size: 10px;
+  font-size: 12px;
   width: 130px;
 }
 
@@ -308,6 +308,14 @@ input#submit:hover {
   font-weight: bold;
   font-size: 16px;
   height: 20px;
+}
+
+.paramname{
+  width: 90px;
+}
+
+.paramvalue{
+  text-align: right;
 }
 
 .params {
