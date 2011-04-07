@@ -3,6 +3,7 @@ body, html {
   text-align: center;
   font-family: "Verdana";
   font-size: 14px;
+  color: #333;
 }
 
 .webcam {
@@ -305,7 +306,7 @@ input#submit:hover {
   padding-bottom: 8px;
 }
 
-.logout a {
+.logout a, a.sysinfo {
   color: #FFFFFF;
   text-decoration: none;
 }

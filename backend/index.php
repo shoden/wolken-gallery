@@ -82,6 +82,41 @@ if(isset($_POST['1-1'])) {
 <div id="logo"><img src="../images/header.jpg"></div>
 <div class="logout"><a href="logout.php"><img alt="Salir" border="0" src="../images/exit.png"></a></div>
 <div class="params">
+<div class="paramstitle">Informaci&oacute;n del servidor</div>
+
+<?php
+
+$data = shell_exec('uptime');
+$uptime = explode(' up ', $data);
+$uptime = explode(',', $uptime[1]);
+$uptime = $uptime[0];
+$load = sys_getloadavg();
+
+define("DISK","/"); 
+$total = round(disk_total_space(DISK)/1024/1024/1024,2);
+$free = round(disk_free_space(DISK)/1024/1024/1024,2);
+
+echo "<table width='100%'>\n";
+echo "<tr>\n";
+echo "<td class='paramstableheader'>Tiempo encencido</td>\n";
+echo "<td class='paramstableheader'>Espacio libre</td>\n";
+echo "<td class='paramstableheader'>Carga media de CPU</td>\n";
+echo "<td class='paramstableheader'>Espacio de las capturas</td>\n";
+echo "<td class='paramstableheader'>Versi&oacute;n</td>\n";
+echo "<td class='paramstableheader'>M&aacute;s informaci&oacute;n</td>\n";
+echo "</tr>\n";
+echo "<tr>\n";
+echo "<td class='enabled'>" . $uptime . "</td>\n";
+echo "<td class='enabled'>{$free} GB de {$total} GB </td>\n";
+echo "<td class='enabled'>" . $load[0]. "</td>\n";
+echo "<td class='enabled'>" . exec("du -hs /home/juan/img/wolken/ | awk '{print $1}'") . "</td>\n";
+echo "<td class='enabled'>" . exec("cat /home/juan/uco/fca/src/wolken/version") . "</td>\n";
+echo "<td class='enabled'><a class='sysinfo' href='http://localhost/phpsysinfo/'>Ver</a></td>\n";
+echo "</table>\n";
+?>
+</div>
+
+<div class="params">
 <div class="paramstitle">Par&aacute;metros de las tomas</div>
 
 <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
