@@ -70,12 +70,13 @@ include_once("funciones.php");
     document.getElementById("currentdate").innerHTML = g_globalObject.currentDay 
       + "/" + g_globalObject.currentMonth
       + "/" + g_globalObject.currentYear;
-    //ajax(fill(g_globalObject.currentYear, g_globalObject.currentMonth, g_globalObject.currentDay));
+			document.getElementById("takes").innerHTML="<img src='images/cargando.png'>";
+    ajax(fill(g_globalObject.currentYear, g_globalObject.currentMonth, g_globalObject.currentDay));
 		
 		g_globalObject.setOnSelectedDelegate(function(){
 			var obj = g_globalObject.getSelectedDay();
 			document.getElementById("currentdate").innerHTML = obj.day + "/" + obj.month + "/" + obj.year;
-			document.getElementById("takes").innerHTML="<div style='color:#FFF;'>Cargando....</div>";
+			document.getElementById("takes").innerHTML="<img src='images/cargando.png'>";
       ajax(fill(obj.year, obj.month, obj.day));
 		});
 	};
@@ -109,16 +110,7 @@ for($h=7; $h<22; $h++)
   </table>
 </div>
 
-<div id="takes">
-<?php
-
-
-  showTake( "2011-04-07", "09:18" );
-
-?>
-<div>
-
-
+<div id="takes"><div>
 
 <div id="footer">2011 &copy; Departamento de F&iacute;sica Aplicada. Universidad de C&oacute;rdoba</div>
 </body>

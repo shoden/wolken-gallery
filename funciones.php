@@ -7,7 +7,7 @@ function showTake($day, $time)
   $_THUMBS = $_DIR . "thumbs/";
 
   if(!is_dir($_THUMBS)) {
-    echo "<div class='error'>El directorio <b>{$_DIR}</b> no existe.</div>";
+    echo "";//<div class='error'>El directorio <b>{$_DIR}</b> no existe.</div>";
     return 1;
   };
 

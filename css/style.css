@@ -169,6 +169,10 @@ div.takelink a:hover {
   border: solid 1px #000098;
 }
 
+.takes {
+  width: 100%;
+}
+
 .take {
   margin-bottom: 15px;
   background: #8da8c6;
@@ -267,7 +271,6 @@ input#submit:hover {
   background: #ffd7d7;
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-right: 10px;
 }
 
 .submited {

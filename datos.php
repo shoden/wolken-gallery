@@ -7,7 +7,7 @@ include "funciones.php";
 
 $fecha = $_POST['f'];
 
-for($i=0; $i<91;$i++)
+for($i=0; $i<300;$i++)
   showTake( $fecha, "09:27" );
 
 //parse_str($row[0], $a);

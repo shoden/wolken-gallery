@@ -31,6 +31,8 @@ function ajax(fecha)
 			  
 			  parent.document.getElementById("takes").innerHTML=ajax.responseText;//a[0] + " - " + a[1];
         parent.updateLightBox();
+        if(ajax.responseText=="")
+			    parent.document.getElementById("takes").innerHTML="<div class='error'>Este d&iacute;a no tiene capturas.</div>";
 		}
 
   }
