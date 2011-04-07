@@ -111,7 +111,7 @@ echo "<td class='enabled'>{$free} GB de {$total} GB </td>\n";
 echo "<td class='enabled'>" . $load[0]. "</td>\n";
 echo "<td class='enabled'>" . exec("du -hs /home/juan/img/wolken/ | awk '{print $1}'") . "</td>\n";
 echo "<td class='enabled'>";
-include("../version.php");
+include("../inc/version.php");
 echo "</td>\n";
 echo "<td class='enabled'><a class='sysinfo' href='http://localhost/phpsysinfo/'>Ver</a></td>\n";
 echo "</table>\n";

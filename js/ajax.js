@@ -6,7 +6,7 @@ function ajax(fecha)
 
 	parent.document.getElementById("takelist").style.display ="none";
   
-  ajax.open("POST", "datos.php", true);
+  ajax.open("POST", "inc/datos.php", true);
   ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   ajax.send("f="+fecha+"&list=1");  
   
@@ -20,7 +20,7 @@ function ajax(fecha)
 
   var ajax2=nuevoAjax();
   
-  ajax2.open("POST", "datos.php", true);
+  ajax2.open("POST", "inc/datos.php", true);
   ajax2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   ajax2.send("f="+fecha);  
   

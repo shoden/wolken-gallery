@@ -8,14 +8,14 @@ function showTake($day, $time)
   $_DIR ="wolken/{$day}/{$tim}/";
   $_THUMBS = $_DIR . "thumbs/";
 
-  if(!is_dir($_THUMBS)) {
-    echo "";//<div class='error'>El directorio <b>{$_DIR}</b> no existe.</div>";
+  if(!is_dir("../".$_THUMBS)) {
+    echo "";
     return 1;
   };
 
   $file_list = array();
 
-  if ($handle = opendir($_THUMBS)) {
+  if ($handle = opendir("../".$_THUMBS)) {
      while (false !== ($file = readdir($handle))) {
         if (strtolower(array_pop(explode('.',$file))) == 'bmp') {
            $file_list[] = $file;
@@ -38,7 +38,7 @@ function showTake($day, $time)
   $i=0;
   foreach($file_list as $file) {
     $path = $_THUMBS.$file;
-    if(!is_file($_DIR . $file)) continue;
+    if(!is_file("../".$_DIR . $file)) continue;
     echo "<div class=\"thumb\">";
     echo "<a rel=\"lightbox[a]\" href=\"{$_DIR}{$file}\" title=\"{$file}\">";
     echo "<img src=\"{$path}\" class=\"pic\" alt=\"{$_DIR}{$file}\"></a><br>\n";
