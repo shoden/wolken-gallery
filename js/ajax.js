@@ -58,3 +58,31 @@ function nuevoAjax()
 
 	return xmlhttp; 
 }
+
+function deleteday()
+{
+  var today = document.getElementById('currentdate').innerHTML;
+  var answer = confirm('Se van a eliminar todas las capturas del días ' + today + '. ¿Continuar?');
+
+  if(!answer)
+    return false;
+
+  var del=nuevoAjax();
+  
+  del.open("POST", "backend/deleteday.php", true);
+  del.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  del.send("f="+today);  
+  
+  del.onreadystatechange=function()
+	{
+	  if (del.readyState==4){	
+      if(del.responseText == "ok"){
+        alert('¡Capturas eliminadas!');
+        window.location.reload(true);
+      }
+      else
+        alert(del.responseText);
+        //alert('Se ha producido un error y no se han podido eliminar las capturas.');
+		}
+  }
+}

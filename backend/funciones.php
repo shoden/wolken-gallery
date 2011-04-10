@@ -110,4 +110,47 @@ function getCapturesByTake($day, $time)
   return $v;
 }
 
+function deleteDay($day)
+{
+  $sql = "DELETE FROM capturas WHERE dia ='". $day . "'";
+  mysql_query($sql);
+  return mysql_affected_rows();
+}
+function rrmdir($directory, $empty=FALSE)
+{
+  if(substr($directory,-1) == '/')
+  {
+    $directory = substr($directory,0,-1);
+  }
+  if(!file_exists($directory) || !is_dir($directory))
+  {
+    return FALSE;
+  }elseif(is_readable($directory))
+  {
+    $handle = opendir($directory);
+    while (FALSE !== ($item = readdir($handle)))
+    {
+      if($item != '.' && $item != '..')
+      {
+        $path = $directory.'/'.$item;
+        if(is_dir($path)) 
+        {
+          rrmdir($path);
+        }else{
+          unlink($path);
+        }
+      }
+    }
+    closedir($handle);
+    if($empty == FALSE)
+    {
+      if(!rmdir($directory))
+      {
+        return FALSE;
+      }
+    }
+  }
+  return TRUE;
+}
+
 ?>

@@ -63,6 +63,7 @@ function pml_checklogin($goto,$status = "0") {
 				if($cookie_pass == $_COOKIE['pml_usercode_cookie']) {
 					// Everything ok, create sessions
 					$_SESSION['pml_userid'] = $id;
+					$_SESSION['pml_username'] = $username;
 					$_SESSION['pml_userrank'] = $rank;
 					
 					header("Location: ".$_SERVER['REQUEST_URI']);
@@ -153,6 +154,7 @@ function pml_login($todo = "",$action = "") {
 					if($cookie_pass == $_COOKIE['pml_usercode_cookie']) {
 						// Everything ok, create sessions
 						$_SESSION['pml_userid'] = $id;
+					  $_SESSION['pml_username'] = $username;
 						$_SESSION['pml_userrank'] = $rank;
 						
 						$sql_updateonline = "UPDATE `".$settings['db_table']."` SET lastactive = NOW() AND lastlogin = NOW() WHERE id = '".$id."' LIMIT 1";
@@ -199,6 +201,7 @@ function pml_login($todo = "",$action = "") {
 						if($password_db == md5($_POST['password'])) {
 							// Everything ok, create sessions
 							$_SESSION['pml_userid'] = $id;
+					    $_SESSION['pml_username'] = $username;
 							$_SESSION['pml_userrank'] = $rank;
 							if(isset($_POST['cookie'])) {
 								// Also create cookie

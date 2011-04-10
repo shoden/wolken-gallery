@@ -80,7 +80,9 @@ if(isset($_POST['1-1'])) {
 ?>
 
 <div id="logo"><img src="../img/header.jpg"></div>
-<div class="logout"><a href="logout.php"><img alt="Salir" border="0" src="../img/exit.png"></a></div>
+<div class="logout"><a href="logout.php"><img alt="Salir" border="0" src="../img/exit.png"></a>
+<div class="ebcam"><a href="../">Galer&iacute;a</a></div>
+</div>
 <div class="params">
 <div class="paramstitle">Informaci&oacute;n del servidor</div>
 

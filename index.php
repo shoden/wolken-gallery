@@ -1,6 +1,16 @@
 <?php
 error_reporting(E_ALL);
+session_start();
+
 include_once("inc/funciones.php");
+//require_once("backend/login.php");
+
+//pml_login();
+
+$ADMIN = false;
+if( $_SESSION['pml_userid'] != "")
+ $ADMIN = true;
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-es" lang="es-es" dir="ltr">
@@ -25,6 +35,9 @@ include_once("inc/funciones.php");
 </noscript>
 <script type="text/javascript" src="js/body.js"></script>
 <div id="logo"><img src="img/header.jpg"></div>
+<?php if( $ADMIN == true ) { ?>
+  <div class="logout"><a onclick="deleteday()" href="#"><img src="img/deleteday.png" border="0"></a><a href="backend/logout.php"><img alt="Salir" border="0" src="img/exit.png"></a></div>
+<?php } ?>
 <div id="header">
   <table>
     <tr>
@@ -33,6 +46,7 @@ include_once("inc/funciones.php");
         <div id="headertxt">Fecha actual:</div>
         <div id="currentdate">&nbsp;</div>
         <div class="webcam"><a href="backend/">Configuraci&oacute;n</a></div>
+        <div class="webcam"><a href="#">ZIP</a></div>
         <div class="webcam"><a href="#">Webcam 2</a></div>
         <div class="webcam"><a href="#">Webcam 1</a></div>
         <br><br><br>
