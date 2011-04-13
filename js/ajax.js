@@ -62,7 +62,7 @@ function nuevoAjax()
 function deleteday()
 {
   var today = document.getElementById('currentdate').innerHTML;
-  var answer = confirm('Se van a eliminar todas las capturas del días ' + today + '. ¿Continuar?');
+  var answer = confirm('Se van a eliminar todas las capturas del día ' + today + '. ¿Continuar?');
 
   if(!answer)
     return false;
