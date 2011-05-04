@@ -46,7 +46,7 @@ if( $_SESSION['pml_userid'] != "")
         <div id="headertxt">Fecha actual:</div>
         <div id="currentdate">&nbsp;</div>
         <div class="webcam"><a href="backend/">Configuraci&oacute;n</a></div>
-        <div class="webcam"><a href="#">ZIP</a></div>
+        <div class="webcam"><a onclick="zipday()" href="#">ZIP</a></div>
         <div class="webcam"><a href="#">Webcam 2</a></div>
         <div class="webcam"><a href="#">Webcam 1</a></div>
         <br><br><br>
