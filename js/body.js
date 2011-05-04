@@ -16,7 +16,8 @@ window.onload = function(){
   useMode:1,
   isStripped:true,
   target:"calendar",
-  yearsRange:[2010,2013]
+  yearsRange:[2010,2013],
+  limitToToday:true
 });
 
 document.getElementById("currentdate").innerHTML = g_globalObject.currentDay 
