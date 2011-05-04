@@ -11,9 +11,9 @@ db_connect();
 // Fecha pasada como parámetro
 $d = explode("/", $_GET['d']);
 $date = $d[2] . "-";
-$date .= ($d[1]<10) ? "0".$d[1] : $d[1];
+$date .= (strlen($d[1])<2) ? "0".$d[1] : $d[1];
 $date .= "-";
-$date .= ($d[0]<10) ? "0".$d[0] : $d[0];
+$date .= (strlen($d[0])<2) ? "0".$d[0] : $d[0];
 $today = $date;
 
 // Función recursiva para obtener el contenido de un directorio

@@ -153,4 +153,23 @@ function rrmdir($directory, $empty=FALSE)
   return TRUE;
 }
 
+function getDays()
+{
+  $sql ="SELECT DISTINCT dia FROM capturas;";
+  
+  $res = mysql_query($sql);
+  if(mysql_num_rows($res) > 0) {
+    $i=0;
+    while ($row = mysql_fetch_assoc($res)) {
+      $d = explode("-", $row['dia']);
+      $day = $d[2] . "/" . $d[1] . "/" . $d[0];
+      $o .= "<option value='". $row['dia'] ."'>" . $day . "<br>\n";
+    }
+  }
+
+  mysql_free_result($res);
+
+  return $o;
+}
+
 ?>

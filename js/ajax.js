@@ -76,13 +76,8 @@ function deleteday()
   del.onreadystatechange=function()
 	{
 	  if (del.readyState==4){	
-      if(del.responseText == "ok"){
-        alert('¡Capturas eliminadas!');
-        window.location.reload(true);
-      }
-      else
         alert(del.responseText);
-        //alert('Se ha producido un error y no se han podido eliminar las capturas.');
+        window.location.reload(true);
 		}
   }
 }

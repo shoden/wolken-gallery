@@ -401,3 +401,13 @@ input#submit:hover {
 input.param:focus { 
   background: #ffd895;
 }
+
+select {
+  height: 18px;
+  font-size: 12px;
+  padding: 0px;
+  /*background: #b6d1ee;*/
+  background: #FFFFFF;
+  border: 1px solid #000098;
+  color: #000098;
+}

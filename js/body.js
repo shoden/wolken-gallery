@@ -38,3 +38,13 @@ g_globalObject.setOnSelectedDelegate(function(){
   });
 };
 
+function selectDay()
+{
+  var i = document.getElementById("list").selectedIndex;
+  if(i>0){
+    var t = document.getElementById("list").options[i].text;
+    var v = document.getElementById("list").options[i].value;
+    document.getElementById("currentdate").innerHTML = t; 
+    ajax(v);
+  }
+}

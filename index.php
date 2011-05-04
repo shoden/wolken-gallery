@@ -3,13 +3,13 @@ error_reporting(E_ALL);
 session_start();
 
 include_once("inc/funciones.php");
+require_once("backend/funciones.php");
+db_connect();
 //require_once("backend/login.php");
 
 //pml_login();
 
-$ADMIN = false;
-if( $_SESSION['pml_userid'] != "")
- $ADMIN = true;
+$ADMIN = ( $_SESSION['pml_userid'] != "") ? true : false;
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -49,6 +49,12 @@ if( $_SESSION['pml_userid'] != "")
         <div class="webcam"><a onclick="zipday()" href="#">ZIP</a></div>
         <div class="webcam"><a href="#">Webcam 2</a></div>
         <div class="webcam"><a href="#">Webcam 1</a></div>
+        <div class="webcam">
+          <select id="list" name="list" onChange="selectDay()">
+            <option value="0" selected>CAPTURAS
+<?php echo getDays(); ?>
+          </select>
+        </div>
         <br><br><br>
         <div id="takelist"></div>
       </td>
