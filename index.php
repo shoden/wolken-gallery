@@ -36,7 +36,11 @@ $ADMIN = ( $_SESSION['pml_userid'] != "") ? true : false;
 <script type="text/javascript" src="js/body.js"></script>
 <div id="logo"><img src="img/header.jpg"></div>
 <?php if( $ADMIN == true ) { ?>
-  <div class="logout"><a onclick="deleteday()" href="#"><img src="img/deleteday.png" border="0"></a><a href="backend/logout.php"><img alt="Salir" border="0" src="img/exit.png"></a></div>
+  <div class="logout">
+    <div class="button2"><a href="backend/logout.php">Salir</a></div>
+    <div class="button2"><a onclick="deleteday()" href="#">Eliminar d&iacute;a</a></div>
+    <div class="button"><a onclick="zipday()" href="#">Crear ZIP</a></div>
+</div>
 <?php } ?>
 <div id="header">
   <table>
@@ -45,11 +49,10 @@ $ADMIN = ( $_SESSION['pml_userid'] != "") ? true : false;
       <td class="headercol2">
         <div id="headertxt">Fecha actual:</div>
         <div id="currentdate">&nbsp;</div>
-        <div class="webcam"><a href="backend/">Configuraci&oacute;n</a></div>
-        <div class="webcam"><a onclick="zipday()" href="#">ZIP</a></div>
-        <div class="webcam"><a href="#">Webcam 2</a></div>
-        <div class="webcam"><a href="#">Webcam 1</a></div>
-        <div class="webcam">
+        <div class="button"><a href="backend/">Configuraci&oacute;n</a></div>
+        <div class="button"><a href="#">Webcam 2</a></div>
+        <div class="button"><a href="#">Webcam 1</a></div>
+        <div class="button">
           <select id="list" name="list" onChange="selectDay()">
             <option value="0" selected>CAPTURAS
 <?php echo getDays(); ?>

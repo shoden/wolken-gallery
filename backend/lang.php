@@ -15,4 +15,9 @@ $lang['login-incorrect']	= "<div class=\"error\">La clave introducida para ese u
 
 $lang['logout-ok']			= "Ha salido de la sesi&oacute;n.";
 $lang['logout-nologin']		= "Ya ha salido de la sesi&oacute;n.";
+
+$lang['old-password']		= "Clave actual";
+$lang['new-password']		= "Clave nueva";
+$lang['new-password2']		= "Confirmar clave nueva";
+$lang['save']		= "Guardar";
 ?>

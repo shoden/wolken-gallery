@@ -259,7 +259,7 @@ function pml_login($todo = "",$action = "") {
 <body id="loginbody" onload="document.getElementById('username').focus();">
 <div id="logo"><img src="../img/header.jpg"></div>
   <div id="loginwrapper">
-  <div class="webcam"><a href="../">Galer&iacute;a</a></div>
+  <div class="button"><a href="../">Galer&iacute;a</a></div>
   <div id="loginform">
 		<form method="post" id="f" name="f" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
 			<table>

@@ -6,10 +6,11 @@ body, html {
   color: #333;
 }
 
-.webcam {
+.button, .button2 {
   float: right;
   text-align: center;
   font-weight: bold;
+  text-transform: uppercase;
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -20,15 +21,26 @@ body, html {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 10px;
+  height: 18px;
 }
 
-.webcam a {
+.button a, .button a:link, .button a:visited {
   color: #466fad;
   text-decoration: none;
 }
 
-.webcam a:hover {
+.button a:hover {
   color: #000098;
+  text-decoration: none;
+}
+
+.button2 a, .button2 a:link, .button2 a:visited {
+  color: #DD0000;
+  text-decoration: none;
+}
+
+.button2 a:hover {
+  color: #980000;
   text-decoration: none;
 }
 
@@ -304,8 +316,9 @@ input#submit:hover {
   width: 100%;
   float: right;
   margin: 0px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-bottom: 1px dotted #AA0000;
 }
 
 .logout img {

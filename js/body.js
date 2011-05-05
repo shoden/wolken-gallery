@@ -48,3 +48,4 @@ function selectDay()
     ajax(v);
   }
 }
+

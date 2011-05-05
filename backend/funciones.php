@@ -172,4 +172,24 @@ function getDays()
   return $o;
 }
 
+function changePassword($userid, $oldpass, $newpass)
+{
+  $sql ="SELECT password FROM usuarios WHERE id=". $userid .";";
+  
+  $res = mysql_query($sql);
+  if(mysql_num_rows($res) <= 0)
+    return "No se pudo conseguir la clave anterior";
+
+  $row = mysql_fetch_assoc($res);
+  if($oldpass != $row['password'])
+    return "La clave actual introducida no es correcta";
+
+  $sql = "UPDATE usuarios SET password='". $newpass . "' WHERE id=". $userid .";";
+  $res = mysql_query($sql);
+
+  mysql_free_result($res);
+
+  return "";
+}
+
 ?>
