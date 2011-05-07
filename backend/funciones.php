@@ -51,6 +51,22 @@ function getTakes()
   return $v;
 }
 
+function getTake($day, $time)
+{
+  $sql ="SELECT * FROM capturas WHERE dia='{$day}' AND hora LIKE '{$time}%' ORDER BY toma ASC";
+  
+  $res = mysql_query($sql);
+  if(mysql_num_rows($res) > 0) {
+    $i=0;
+    while ($row = mysql_fetch_assoc($res)) {
+         $v[$i++] = $row;
+    }
+  }
+  mysql_free_result($res);
+
+  return $v;
+}
+
 function enableTake($id, $enabled)
 {
   $sql ="UPDATE tomas SET habilitado={$enabled} WHERE id={$id};";

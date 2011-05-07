@@ -17,6 +17,7 @@ $date .= (strlen($d[0])<2) ? "0".$d[0] : $d[0];
 $today = $date;
 
 // Función recursiva para obtener el contenido de un directorio
+/*
 function fun_dir($dir,&$A,$path=0)
 {
   $d = dir($dir);
@@ -36,6 +37,7 @@ function fun_dir($dir,&$A,$path=0)
   }
   $d->close();   
 }
+*/
 
 // Directorio de las imágenes
 $IMG_DIR="../wolken/";
@@ -44,10 +46,42 @@ $IMG_DIR="../wolken/";
 if(!is_dir($IMG_DIR . $today))
   die("Error: El día ". $today ." no tiene capturas.");
 
-// Generar el ZIP
 $cont=array();
-fun_dir($IMG_DIR, $cont);
-$cont["leeme.txt"]="Zip generado el día ".date("Y-m-d H:i:s");
+$takes = array();
+$takes = getCapturesByDay($today);
+
+// Para cada toma de ese día
+for($i=0; $i<count($takes); $i++){
+  $time = $takes[$i]['hora'];
+  $timedir = str_replace(":", "", $time);
+  $log = "Capturas realizadas el día $today a las $time\n\n";
+  $take = getTake($today, $time);
+
+  // Para cada imagen de esa toma
+  for($j=0; $j<count($take); $j++){
+    $t = $take[$j]['toma'];
+    $t = (strlen($t)<2) ? "0".$t : $t;
+    $bmp = "{$t}.bmp";
+
+    $log .= $bmp . "\n";
+    $log .= "   Agudeza:    " . $take[$j]['agudeza'] . "\n";
+    $log .= "   Brillo:     " . $take[$j]['brillo'] . "\n";
+    $log .= "   Contraste:  " . $take[$j]['contraste'] . "\n";
+    $log .= "   Exposición: " . $take[$j]['exposicion'] . "\n";
+    $log .= "   Gamma:      " . $take[$j]['gamma'] . "\n";
+    $log .= "   Ganancia:   " . $take[$j]['ganancia'] . "\n";
+    $log .= "   Saturación: " . $take[$j]['saturacion'] . "\n";
+    $log .= "   Tonalidad:  " . $take[$j]['tonalidad'] . "\n";
+    $log .= "\n";
+
+    // Añadir fichero al ZIP
+    $cont["{$today}/{$timedir}/{$bmp}"] = file_get_contents($IMG_DIR . "{$today}/{$timedir}/{$bmp}");
+  }
+  // Añadir el fichero de parámetros al ZIP
+  $cont["{$today}/{$timedir}/leeme.txt"] = $log;
+}
+
+// Generar el ZIP
 $data = createzip($cont) or die("Error: al construir el ZIP.");
 
 // Forzar la descarga del ZIP
