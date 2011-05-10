@@ -101,7 +101,7 @@ if( $_FILES['refimg']['name'] != "" ){
     if ($_FILES["refimg"]["type"] != "image/bmp")
       echo "<div class=\"error\">ROI: El tipo de fichero subido no es BMP.</div>";
     else{
-      move_uploaded_file($_FILES["refimg"]["tmp_name"], "refimg.bmp");
+      move_uploaded_file($_FILES["refimg"]["tmp_name"], "../img/roiref.bmp");
       echo "<div class=\"submited\">ROI: Imagen actualizada correctamente.</div>";
       $IMG_CHANGED = true;
     }
@@ -346,7 +346,7 @@ echo "</table>\n";
           Haga clic y arrastre en la imagen. 
         </p>
         <div id="pf" class="frame" style="margin: 0 0.3em; width: 640px; height: 480px;">
-          <img id="photo" src="refimg.bmp" />
+          <img id="photo" src="../img/roiref.bmp" />
         </div>
       </div>
 
