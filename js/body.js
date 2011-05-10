@@ -45,6 +45,7 @@ function selectDay()
     var t = document.getElementById("list").options[i].text;
     var v = document.getElementById("list").options[i].value;
     document.getElementById("currentdate").innerHTML = t; 
+    document.getElementById("takes").innerHTML="<img src='img/cargando.png'>";
     ajax(v);
   }
 }
