@@ -208,4 +208,30 @@ function changePassword($userid, $oldpass, $newpass)
   return "";
 }
 
+function getROI()
+{
+  $sql ="SELECT * FROM roi;";
+  
+  $res = mysql_query($sql);
+  $roi="";
+  if(mysql_num_rows($res) > 0)
+    $roi = mysql_fetch_assoc($res);
+
+  mysql_free_result($res);
+
+  $roi['w'] = $roi['x2'] - $roi['x1'];
+  $roi['h'] = $roi['y2'] - $roi['y1'];
+
+  return $roi;
+}
+
+function setROI($h, $x1, $y1, $x2, $y2)
+{
+  if($h>0)
+    $sql ="UPDATE roi SET habilitado=1, x1={$x1}, y1={$y1}, x2={$x2}, y2={$y2};";
+  else
+    $sql ="UPDATE roi SET habilitado=0;";
+  
+  $res = mysql_query($sql);
+}
 ?>

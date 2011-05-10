@@ -267,7 +267,7 @@ input#username:focus, input#password:focus {
   background: #ffd895;
 }
 
-input#submit { 
+input#submit, input.submit { 
  	border: 1px solid #999;
   padding: 2px;
   padding-left: 10px;
@@ -278,7 +278,7 @@ input#submit {
   height: 20px;
 }
 
-input#submit:hover { 
+input#submit:hover, input.submit:hover { 
   background: url('../img/taketitle-bg2.jpg');
   color: #000098;
 }
@@ -394,7 +394,7 @@ input#submit:hover {
   background: #EFEFEF;
 }
 
-#paramstable tr td.enabled input { 
+#paramstable tr td.enabled input, .roiparam { 
  	border: 1px solid #999;
   background: #EFEFEF;
 	padding: 2px;
@@ -423,4 +423,39 @@ select {
   background: #FFFFFF;
   border: 1px solid #000098;
   color: #000098;
+}
+
+
+/* ROI */
+div.frame {
+	background: #FFFFFF;
+	padding: 0.8em;
+	border: solid 2px #DDDDDD;
+}
+
+.demo {
+  background: #b6d1ee;
+  padding: 0.6em;
+  margin: 2px;
+}
+
+.demo p {
+	padding: 0.3em 0.6em;
+	margin: 0.3em auto;
+}
+
+.demo p.instructions {
+	font-family: serif;
+	font-style: italic;
+	xfont-size: 90%;
+	color: #666;
+	line-height: 130%;
+}
+div.container:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
 }
