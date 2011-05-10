@@ -165,7 +165,7 @@ div.takelink {
   float: left;
   margin: 2px;
 }
-div.takelink a {
+div.takelink a, a.sysinfo {
   text-decoration: none;
   color: #000000;
   font-size: 14px;
@@ -176,7 +176,7 @@ div.takelink a {
   border: solid 1px #666;
 }
 
-div.takelink a:hover {
+div.takelink a:hover, a.sysinfo:hover {
   background: url('../img/taketitle-bg2.jpg');
   color: #000098;
   border: solid 1px #000098;
@@ -246,6 +246,7 @@ img.pic:hover {
   color: #333333;
   text-align: center;
   background: #b6d1ee;
+  background-image: url('../img/login-bg.jpg');
   width: 276px;
   padding: 20px;
   margin: auto;
@@ -325,7 +326,7 @@ input#submit:hover, input.submit:hover {
   margin-left: 20px;
 }
 
-.logout a, a.sysinfo {
+.logout a {
   color: #FFFFFF;
   text-decoration: none;
 }

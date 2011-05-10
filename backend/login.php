@@ -283,6 +283,7 @@ function pml_login($todo = "",$action = "") {
     </form>
   </div>
   </div>
+<br>
 <div id="footer">2011 &copy; Departamento de F&iacute;sica Aplicada. Universidad de C&oacute;rdoba</div>
 </body>
 </html>
