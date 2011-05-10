@@ -24,7 +24,7 @@ document.getElementById("currentdate").innerHTML = g_globalObject.currentDay
   + "/" + g_globalObject.currentMonth
   + "/" + g_globalObject.currentYear;
 
-document.getElementById("takes").innerHTML="<img src='img/cargando.png'>";
+document.getElementById("takes").innerHTML="<img src='img/cargando.png' style='margin-bottom:30px;'>";
 
 ajax(fill(g_globalObject.currentYear,
      g_globalObject.currentMonth,
@@ -33,7 +33,7 @@ ajax(fill(g_globalObject.currentYear,
 g_globalObject.setOnSelectedDelegate(function(){
   var obj = g_globalObject.getSelectedDay();
   document.getElementById("currentdate").innerHTML = obj.day + "/" + obj.month + "/" + obj.year;
-  document.getElementById("takes").innerHTML="<img src='img/cargando.png'>";
+  document.getElementById("takes").innerHTML="<img src='img/cargando.png' style='margin-bottom:30px;'>";
   ajax(fill(obj.year, obj.month, obj.day));
   });
 };
@@ -45,7 +45,7 @@ function selectDay()
     var t = document.getElementById("list").options[i].text;
     var v = document.getElementById("list").options[i].value;
     document.getElementById("currentdate").innerHTML = t; 
-    document.getElementById("takes").innerHTML="<img src='img/cargando.png'>";
+    document.getElementById("takes").innerHTML="<img src='img/cargando.png' style='margin-bottom:30px;'>";
     ajax(v);
   }
 }

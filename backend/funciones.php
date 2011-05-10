@@ -54,17 +54,17 @@ function getTakes()
 function getTake($day, $time)
 {
   $sql ="SELECT * FROM capturas WHERE dia='{$day}' AND hora LIKE '{$time}%' ORDER BY toma ASC";
+  $i=0;
   
   $res = mysql_query($sql);
   if(mysql_num_rows($res) > 0) {
-    $i=0;
     while ($row = mysql_fetch_assoc($res)) {
-         $v[$i++] = $row;
+         $vv[$i++] = $row;
     }
   }
   mysql_free_result($res);
 
-  return $v;
+  return $vv;
 }
 
 function enableTake($id, $enabled)
@@ -83,7 +83,7 @@ function setTake($id, $values)
   $PARAMS = getParams();
   $PARAMS_COUNT = count($PARAMS);
 
-  $v="";
+  $v=array();
   for($i=0; $i<$PARAMS_COUNT; $i++) {
     $v .= $PARAM_ID[$i] . "=" . $values[$PARAM_ID[$i]] . ", ";
   }
@@ -97,6 +97,7 @@ function setTake($id, $values)
 function getCapturesByDay($day)
 {
   $sql ="SELECT DATE_FORMAT( hora, '%H:%i' ) AS hora FROM capturas WHERE dia=\"{$day}\" GROUP BY hora;";
+  $v="";
   
   $res = mysql_query($sql);
   if(mysql_num_rows($res) > 0) {
@@ -172,6 +173,7 @@ function rrmdir($directory, $empty=FALSE)
 function getDays()
 {
   $sql ="SELECT DISTINCT dia FROM capturas;";
+  $o="";
   
   $res = mysql_query($sql);
   if(mysql_num_rows($res) > 0) {

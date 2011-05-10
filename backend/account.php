@@ -52,7 +52,7 @@ if(isset($_POST['oldpass'])) {
 
 <div class="params">
 <div class="paramstitle">Usuario</div>
-<?php echo $_SESSION['pml_username']; ?>
+<?php echo "<p style='color:white;'>" . $_SESSION['pml_username'] . "</p>"; ?>
 <center>
 </center>
 </div>
@@ -65,15 +65,15 @@ if(isset($_POST['oldpass'])) {
   <table>
     <tr>
       <td class="label"><label for="password"><?php echo $lang['old-password']; ?></label></td>
-      <td><input type="password" id="oldpassword" name="oldpassword" /></td>
+      <td><input type="password" id="oldpassword" name="oldpassword" class="account" /></td>
     </tr>
     <tr>
       <td class="label"><label for="password"><?php echo $lang['new-password']; ?></label></td>
-      <td><input type="password" id="newpassword" name="newpassword" /></td>
+      <td><input type="password" id="newpassword" name="newpassword" class="account" /></td>
     </tr>
     <tr>
       <td class="label"><label for="password"><?php echo $lang['new-password2']; ?></label></td>
-      <td><input type="password" id="newpassword2" name="newpassword2" /></td>
+      <td><input type="password" id="newpassword2" name="newpassword2" class="account" /></td>
     </tr>
     <tr>
     <td><br><br><br></td>

@@ -64,7 +64,7 @@ $ADMIN = ( $_SESSION['pml_userid'] != "") ? true : false;
     </tr>
   </table>
 </div>
-<div id="takes"><div>
+<div id="takes"></div>
 <div id="footer">2011 &copy; Departamento de F&iacute;sica Aplicada. Universidad de C&oacute;rdoba</div>
 </body>
 </html>

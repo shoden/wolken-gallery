@@ -255,14 +255,14 @@ td.label {
   text-align: right;
 }
 
-input#username, input#password { 
+input#username, input#password, input.account { 
  	border: 1px solid #999;
   background: #EFEFEF;
 	padding: 2px;
   width: 150px;
 }
 
-input#username:focus, input#password:focus { 
+input#username:focus, input#password:focus, input.account:focus { 
  	border: 1px solid #999;
   background: #ffd895;
 }
@@ -400,6 +400,11 @@ input#submit:hover, input.submit:hover {
 	padding: 2px;
   width: 50px;
   text-align: center;
+}
+
+#paramstable tr td.enabled input:focus, .roiparam:focus { 
+ 	border: 1px solid #999;
+  background: #ffd895;
 }
 
 #paramstable tr td.disabled input { 
