@@ -96,13 +96,13 @@ if(isset($_POST['1-1'])) {
 $IMG_CHANGED = false;
 if( $_FILES['refimg']['name'] != "" ){
   if( $_FILES['refimg']['error'] > 0 )
-    echo "<div class=\"error\">ROI: " . $_FILES["refimg"]["error"] . "</div>";
+    echo "<div class=\"error\">ERROR: (Regi&oacute;n de inter&eacute;s) " . $_FILES["refimg"]["error"] . ".</div>";
   else{
     if ($_FILES["refimg"]["type"] != "image/bmp")
-      echo "<div class=\"error\">ROI: El tipo de fichero subido no es BMP.</div>";
+      echo "<div class=\"error\">ERROR: (Regi&oacute;n de inter&eacute;s) El tipo de fichero subido no es BMP.</div>";
     else{
       move_uploaded_file($_FILES["refimg"]["tmp_name"], "../img/roiref.bmp");
-      echo "<div class=\"submited\">ROI: Imagen actualizada correctamente.</div>";
+      echo "<div class=\"submited\">Imagen de referencia para la regi&oacute;n de inter&eacute;s actualizada correctamente.</div>";
       $IMG_CHANGED = true;
     }
   }
@@ -115,17 +115,17 @@ if(isset($_POST['x1'])){
 
   if($habilitado==0){
     setROI(0,0,0,0,0);
-    echo "<div class=\"submited\">ROI deshabilitado</div>";
+    echo "<div class=\"submited\">Regi&oacute;n de inter&eacute;s deshabilitada.</div>";
   }
   else{
     if(((!is_numeric($_POST['x1']) || !is_numeric($_POST['y1'])) || 
         (!is_numeric($_POST['x2']) || !is_numeric($_POST['y2'])))||
         (($_POST['x1']<0 || $_POST['y1']<0) || ($_POST['x2']<0 ||
         $_POST['y2']<0)))
-      echo "<div class=\"error\">ROI: Los campos introducidos no son v&aacute;lidos.</div>";
+      echo "<div class=\"error\">ERROR: (Regi&oacute;n de inter&eacute;s) Los campos introducidos no son v&aacute;lidos.</div>";
     else{
       setROI(1, $_POST['x1'], $_POST['y1'], $_POST['x2'], $_POST['y2']);
-      echo "<div class=\"submited\">ROI actualizada.</div>";
+      echo "<div class=\"submited\">Regi&oacute;n de inter&eacute;s actualizada correctamente.</div>";
     }
   }
 }
