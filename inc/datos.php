@@ -2,7 +2,6 @@
 
 //Este archivo se llama mediante AJAX y se le pasa por post la variable id
 
-include("conectar.php");  
 include("funciones.php");  
 include("../backend/funciones.php");  
 

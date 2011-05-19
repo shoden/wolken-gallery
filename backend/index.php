@@ -4,6 +4,7 @@ ERROR_REPORTING(E_ALL);
 session_start();
 
 require_once("login.php");
+require_once("config.php");
 
 pml_login();
 
@@ -173,7 +174,7 @@ echo "<tr>\n";
 echo "<td class='enabled'>" . $uptime . "</td>\n";
 echo "<td class='enabled'>{$free} GB de {$total} GB </td>\n";
 echo "<td class='enabled'>" . $load[0]. "</td>\n";
-echo "<td class='enabled'>" . exec("du -hs /home/juan/img/wolken/ | awk '{print $1}'") . "</td>\n";
+echo "<td class='enabled'>" . exec("du -h '". $settings['imgpath'] . "' | awk '{print $1}'") . "</td>\n";
 echo "<td class='enabled'>";
 include("../inc/version.php");
 echo "</td>\n";
