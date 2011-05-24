@@ -83,7 +83,6 @@ function setTake($id, $values)
   $PARAMS = getParams();
   $PARAMS_COUNT = count($PARAMS);
 
-  $v=array();
   for($i=0; $i<$PARAMS_COUNT; $i++) {
     $v .= $PARAM_ID[$i] . "=" . $values[$PARAM_ID[$i]] . ", ";
   }
