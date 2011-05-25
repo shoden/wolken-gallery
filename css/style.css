@@ -27,21 +27,25 @@ body, html {
 .button a, .button a:link, .button a:visited {
   color: #466fad;
   text-decoration: none;
+  text-shadow: 1.0px 1.0px #AAA;
 }
 
 .button a:hover {
   color: #000098;
   text-decoration: none;
+  text-shadow: 1.0px 1.0px #AAA;
 }
 
 .button2 a, .button2 a:link, .button2 a:visited {
   color: #DD0000;
   text-decoration: none;
+  text-shadow: 1.0px 1.0px #AAA;
 }
 
 .button2 a:hover {
   color: #980000;
   text-decoration: none;
+  text-shadow: 1.0px 1.0px #AAA;
 }
 
 #logo {
