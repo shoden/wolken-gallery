@@ -1,4 +1,4 @@
-wolken-gallery (0.7-1) unstable; urgency=low
+wolken-gallery (0.7) unstable; urgency=low
 
   * licencias Javascript
   * leer configuración de /etc/xdg/wolken/wolken.conf

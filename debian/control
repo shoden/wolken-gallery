@@ -1,6 +1,5 @@
 Source: wolken
 Package: wolken-gallery
-Version: 0.7
 Architecture: all
 Section: universe/web
 Priority: extra
