@@ -8,7 +8,7 @@ Homepage: https://github.com/shoden/wolken
 
 Package: wolken-gallery
 Architecture: all
-Depends: apache2, libapache2-mod-php5, php5, php5-mysql, mysql-server, ${shlibs:Depends}, ${misc:Depends}
+Depends: apache2, libapache2-mod-php5, php5, php5-mysql, mysql-server, ${misc:Depends}
 Recommends: phpmyadmin
 Description: Sistema de observación de nubes 
  Aplicación web para el proyecto Sistema de observación de nubes
