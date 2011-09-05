@@ -1,3 +1,10 @@
+wolken-gallery (0.8-1) unstable; urgency=low
+
+  * CMake configuration files
+  * Fixed lintian warnings and errors
+
+ -- Juan Roldan Ruiz <juan@shoden.es>  Mon, 05 Sep 2011 16:12:09 +0200
+
 wolken-gallery (0.7-1) unstable; urgency=low
 
   * Javascript licenses
