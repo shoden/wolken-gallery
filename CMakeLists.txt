@@ -2,11 +2,47 @@ cmake_minimum_required(VERSION 2.6)
 
 project(wolken-gallery)
 
-set(GALLERY src/*)
+set(GALLERY_DIR share/wolken-gallery/gal)
 
-install(FILES ${CMAKE_SOURCE_DIR}/${GALLERY} /var/www/wolken/gal)
+# Register all files
+file(GLOB _a src/*.php)
+file(GLOB _b src/backend/*.php)
+file(GLOB _c src/css/*.css)
+file(GLOB _d src/img/*.*)
+file(GLOB _e src/img/cal/*.*)
+file(GLOB _f src/inc/*.*)
+file(GLOB _g src/js/*.*)
 
-# uninstall target
+# Install all files
+foreach(a ${_a}) 
+  install(FILES ${a} DESTINATION ${GALLERY_DIR})
+endforeach()
+
+foreach(b ${_b})
+  install(FILES ${b} DESTINATION ${GALLERY_DIR}/backend)
+endforeach()
+
+foreach(c ${_c})
+  install(FILES ${c} DESTINATION ${GALLERY_DIR}/css)
+endforeach()
+
+foreach(d ${_d})
+  install(FILES ${d} DESTINATION ${GALLERY_DIR}/img)
+endforeach()
+
+foreach(e ${_e})
+  install(FILES ${e} DESTINATION ${GALLERY_DIR}/img/cal)
+endforeach()
+
+foreach(f ${_f})
+  install(FILES ${f} DESTINATION ${GALLERY_DIR}/inc)
+endforeach()
+
+foreach(g ${_g})
+  install(FILES ${g} DESTINATION ${GALLERY_DIR}/js)
+endforeach()
+
+# Uninstall target
 configure_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"

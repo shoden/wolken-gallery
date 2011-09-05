@@ -1,12 +1,15 @@
-Source: wolken
-Package: wolken-gallery
-Architecture: all
-Section: universe/web
+Source: wolken-gallery
+Section: web
 Priority: extra
 Maintainer: Juan Roldan Ruiz <juan@shoden.es>
+Build-Depends: debhelper (>= 7), cmake
+Standards-Version: 3.9.2
+Homepage: https://github.com/shoden/wolken
+
+Package: wolken-gallery
+Architecture: all
 Depends: apache2, libapache2-mod-php5, php5, php5-mysql, mysql-server
 Recommends: phpmyadmin
-Homepage: https://github.com/shoden/wolken
 Description: Sistema de observación de nubes 
  Aplicación web para el proyecto Sistema de observación de nubes
  del departamento de Física Aplicada de la Universidad de Córdoba.
