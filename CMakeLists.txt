@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.6)
 
 project(wolken-gallery)
 
+set(CMAKE_INSTALL_PREFIX /usr)
 set(GALLERY_DIR share/wolken-gallery/gal)
 
 # Register all files
