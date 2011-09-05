@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+APACHE_CONF_DIR="/etc/apache2/conf.d"
+APACHE_LINK="/etc/apache2/conf.d/wolken.conf"
+WOLKEN_CONF="/etc/wolken-gallery/apache2.conf"
+
+case "$1" in
+configure)
+  #echo "Instaling/updating package... (after)"
+    if [ -d $APACHE_CONF_DIR ] && [ ! -e $APACHE_LINK ]; then
+      ln -s $WOLKEN_CONF $APACHE_LINK
+      service apache2 restart
+    else
+      echo "Warning: Couldn't create Apache2 link to Wolken gallery."
+    fi
+  ;;
+esac
+
+exit 0

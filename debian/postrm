@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+APACHE_LINK="/etc/apache2/conf.d/wolken.conf"
+
+case "$1" in
+remove)
+  #echo "Removing package... (after)"
+    if [ -e $APACHE_LINK ]; then
+      rm -f $APACHE_LINK
+      service apache2 restart
+    else
+      echo "Warning: Couldn't remove Apache2 link to Wolken gallery."
+    fi
+upgrade)
+  #echo "Removing previous version... (after)"
+  ;;
+esac
+
+exit 0

@@ -43,6 +43,10 @@ foreach(g ${_g})
   install(FILES ${g} DESTINATION ${GALLERY_DIR}/js)
 endforeach()
 
+# Install Apache2 configuration file
+set(APACHE2_CONF conf/apache.conf)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/${APACHE2_CONF} DESTINATION /etc/wolken-gallery)
+
 # Uninstall target
 configure_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
