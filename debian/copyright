@@ -1,10 +1,7 @@
-This work was packaged for Debian by:
+This work was packaged for Debian by Juan Roldan Ruiz <juan@shoden.es> 
+on Thu, 19 May 2011 10:55:53 +0200
 
-    Juan Roldan Ruiz <juan@shoden.es> on Thu, 19 May 2011 10:55:53 +0200
-
-It was downloaded from:
-
-    https://github.com/shoden/wolken-gallery
+It was downloaded from https://github.com/shoden/wolken-gallery
 
 Upstream Author(s):
 
@@ -32,9 +29,6 @@ License:
 On Debian systems, the complete text of the GNU General
 Public License version 3 can be found in `/usr/share/common-licenses/GPL-3'.
 
-The Debian packaging is:
-
-    Copyright (C) 2011 Juan Roldan Ruiz <juan@shoden.es>
-
+The Debian packaging is (C) 2011 Juan Roldan Ruiz <juan@shoden.es>
 and is licensed under the GPL version 3, see above.
 
