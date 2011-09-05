@@ -6,7 +6,7 @@ Priority: extra
 Maintainer: Juan Roldan Ruiz <juan@shoden.es>
 Depends: apache2, libapache2-mod-php5, php5, php5-mysql, mysql-server
 Recommends: phpmyadmin
-Homepage: https://github.com/shoden/wolken-gallery
+Homepage: https://github.com/shoden/wolken
 Description: Sistema de observación de nubes 
  Aplicación web para el proyecto Sistema de observación de nubes
  del departamento de Física Aplicada de la Universidad de Córdoba.

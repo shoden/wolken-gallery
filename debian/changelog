@@ -1,9 +1,9 @@
 wolken-gallery (0.7) unstable; urgency=low
 
-  * licencias Javascript
-  * leer configuración de /etc/xdg/wolken/wolken.conf
-  * mejoras CSS
-  * cargando desde la lista de capturas
-  * fondo de login
+  * Javascript licenses
+  * Read configuration from /etc/xdg/wolken/wolken.conf
+  * CSS improvements
+  * Loading from capture listing
+  * Login background
 
  -- Juan Roldan Ruiz <juan@shoden.es>  Thu, 19 May 2011 10:55:53 +0200
